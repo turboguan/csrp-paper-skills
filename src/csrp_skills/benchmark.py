@@ -25,6 +25,12 @@ class AdjudicationStatus(str, Enum):
 
 
 class ClaimPairGold(BaseModel):
+    """Candidate or gold relation between two evidence claims.
+
+    The gold relation remains null until human review is complete. A model may
+    store a suggestion for triage, but that suggestion is never scored as gold.
+    """
+
     model_config = ConfigDict(extra="forbid")
 
     pair_id: str
@@ -34,21 +40,33 @@ class ClaimPairGold(BaseModel):
     relation: RelationLabel | None = None
     status: AdjudicationStatus = AdjudicationStatus.CANDIDATE
     rationale: str | None = None
+    rationale_for_review: str | None = None
     dimensions: dict[str, str] = Field(default_factory=dict)
     reviewer_ids: list[str] = Field(default_factory=list)
+    reviewer_labels: dict[str, RelationLabel] = Field(default_factory=dict)
+    adjudicator_id: str | None = None
+    model_suggested_relation: RelationLabel | None = None
     notes: list[str] = Field(default_factory=list)
 
     @model_validator(mode="after")
-    def adjudicated_requires_label_and_rationale(self):
+    def validate_adjudication_state(self):
+        if self.claim_a == self.claim_b:
+            raise ValueError("claim_a and claim_b must be different")
+
+        reviewers = set(self.reviewer_ids) | set(self.reviewer_labels)
         if self.status == AdjudicationStatus.ADJUDICATED:
             if self.relation is None:
                 raise ValueError("adjudicated relation requires a relation label")
             if not self.rationale:
                 raise ValueError("adjudicated relation requires a rationale")
-            if len(set(self.reviewer_ids)) < 2:
+            if len(reviewers) < 2:
                 raise ValueError("adjudicated relation requires at least two reviewers")
-        if self.claim_a == self.claim_b:
-            raise ValueError("claim_a and claim_b must be different")
+            if self.reviewer_labels:
+                labels = set(self.reviewer_labels.values())
+                if len(labels) == 1 and self.relation not in labels:
+                    raise ValueError("adjudicated relation must match unanimous reviewer labels")
+                if len(labels) > 1 and not self.adjudicator_id:
+                    raise ValueError("disagreeing reviewer labels require an adjudicator_id")
         return self
 
 
@@ -84,19 +102,28 @@ def load_claim_pairs(path: str | Path) -> list[ClaimPairGold]:
 
 
 def score_relations(gold_records: list[ClaimPairGold], predictions: list[RelationPrediction]) -> RelationScore:
+    """Score only adjudicated records.
+
+    Candidate, model-suggested and single-reviewer labels are explicitly ignored.
+    """
     gold = {r.pair_id: r for r in gold_records if r.status == AdjudicationStatus.ADJUDICATED}
     ignored = [r.pair_id for r in gold_records if r.status != AdjudicationStatus.ADJUDICATED]
     pred = {p.pair_id: p for p in predictions}
 
     if not gold:
         return RelationScore(
-            n=0, accuracy=0.0, per_label_recall={}, confusion={},
-            missing_prediction_ids=[], ignored_non_gold_ids=sorted(ignored),
+            n=0,
+            accuracy=0.0,
+            per_label_recall={},
+            confusion={},
+            missing_prediction_ids=[],
+            ignored_non_gold_ids=sorted(ignored),
         )
 
     confusion: dict[str, Counter[str]] = defaultdict(Counter)
     correct = 0
     missing: list[str] = []
+
     for pair_id, record in gold.items():
         assert record.relation is not None
         if pair_id not in pred:
@@ -129,10 +156,16 @@ def validate_candidate_manifest(path: str | Path) -> dict[str, Any]:
     ids = [p["candidate_id"] for p in papers]
     dois = [p.get("doi") for p in papers if p.get("doi")]
     families = Counter(p["family_id"] for p in papers)
+
     if len(ids) != len(set(ids)):
         raise ValueError("candidate_id values must be unique")
     if len(dois) != len(set(dois)):
         raise ValueError("DOIs must be unique in the candidate manifest")
     if any(count < 3 for count in families.values()):
         raise ValueError("each evidence family must have at least three candidate papers")
-    return {"n_papers": len(papers), "family_counts": dict(families), "n_unique_dois": len(set(dois))}
+
+    return {
+        "n_papers": len(papers),
+        "family_counts": dict(families),
+        "n_unique_dois": len(set(dois)),
+    }
