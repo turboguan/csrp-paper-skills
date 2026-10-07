@@ -1,0 +1,28 @@
+{
+  "analysis_plan_version": "1.0",
+  "pilot_family": "means_restriction_charcoal",
+  "pilot_relation_pairs": 4,
+  "pilot_is_confirmatory": false,
+  "architectures": [
+    "rag_only",
+    "monolithic_agent",
+    "one_paper_one_agent",
+    "paper_as_skill"
+  ],
+  "primary_contrast": ["paper_as_skill", "one_paper_one_agent"],
+  "primary_endpoint_full_benchmark": "cross_paper_relation_accuracy",
+  "relation_labels": [
+    "SUPPORTS",
+    "CONTRADICTS",
+    "QUALIFIES",
+    "NOT_COMPARABLE",
+    "UNRELATED"
+  ],
+  "planned_replicates_per_architecture_query": 5,
+  "bootstrap_resamples": 10000,
+  "primary_ci_level": 0.95,
+  "multiple_comparison_method_secondary_contrasts": "Holm",
+  "pilot_inference_rule": "descriptive_only_no_confirmatory_superiority_claim",
+  "invalid_output_rule": "count_as_incorrect_for_accuracy_and_missing_for_provenance_component",
+  "scaling_loads_target": [1, 3, 5, 10, 20, 40]
+}
