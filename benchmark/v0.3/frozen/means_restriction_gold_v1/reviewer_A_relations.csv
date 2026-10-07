@@ -1,0 +1,5 @@
+pair_id,claim_a,claim_b,population_comparability,intervention_or_exposure_comparability,outcome_comparability,method_or_estimand_comparability,timeframe_comparability,dataset_or_programme_dependency,relation_label,confidence,rationale,source_verified,reviewer_comments
+"MEANS-P01","CSRP-REAL-004-C01","V03-MEANS-002-C01","","","","","","","","","","",""
+"MEANS-P02","V03-MEANS-002-C01","V03-MEANS-003-C01","","","","","","","","","","",""
+"MEANS-P03","CSRP-REAL-004-C01","V03-MEANS-003-C01","","","","","","","","","","",""
+"MEANS-P04","V03-MEANS-004-C01","V03-MEANS-002-C01","","","","","","","","","","",""
