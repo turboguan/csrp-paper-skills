@@ -1,0 +1,50 @@
+{
+  "freeze_version": "means-gold-v1.0",
+  "family_id": "means_restriction_charcoal",
+  "status": "pre_gold_protocol_freeze",
+  "paper_count": 4,
+  "claim_count": 9,
+  "papers": [
+    {
+      "paper_id": "CSRP-REAL-004",
+      "year": 2010,
+      "doi": "10.1192/bjp.bp.109.065185",
+      "paper_skill_path": "real_skills/CSRP-REAL-004.json",
+      "paper_skill_git_blob_sha": "1c3a85ba2a37c91b8ff4863f5d484ef3a0fb4b00",
+      "source_url": "https://www.cambridge.org/core/journals/the-british-journal-of-psychiatry/article/restricting-the-means-of-suicide-by-charcoalburning/AF0773CEC1B356B062466BF3EC79D06D",
+      "source_identity": "British Journal of Psychiatry 196:241-242"
+    },
+    {
+      "paper_id": "V03-MEANS-002",
+      "year": 2015,
+      "doi": "10.1371/journal.pone.0133809",
+      "paper_skill_path": "real_skills/v0.3/V03-MEANS-002.json",
+      "paper_skill_git_blob_sha": "fd37de9150a060d1b28685034e955bb1b056f99b",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4549118/",
+      "source_identity": "PLoS ONE 10(8):e0133809"
+    },
+    {
+      "paper_id": "V03-MEANS-003",
+      "year": 2021,
+      "doi": "10.1016/j.jad.2020.12.147",
+      "paper_skill_path": "real_skills/v0.3/V03-MEANS-003.json",
+      "paper_skill_git_blob_sha": "df29283ffbdcfb428cc0da08d97252112210c60c",
+      "source_url": "https://pubmed.ncbi.nlm.nih.gov/33601720/",
+      "source_identity": "Journal of Affective Disorders 282:795-802"
+    },
+    {
+      "paper_id": "V03-MEANS-004",
+      "year": 2014,
+      "doi": "10.1371/journal.pmed.1001622",
+      "paper_skill_path": "real_skills/v0.3/V03-MEANS-004.json",
+      "paper_skill_git_blob_sha": "36b944de04729188cdbc8ca088ab240ac4bdbd2a",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3972087/",
+      "source_identity": "PLoS Medicine 11(4):e1001622"
+    }
+  ],
+  "notes": [
+    "The Git blob SHA freezes the structured Paper Skill representation.",
+    "Source URLs identify the scientific source used for human verification.",
+    "Source-file SHA-256 checksums may be added in a later archival release if legally and operationally available, but doing so must create a new freeze version rather than mutate this manifest."
+  ]
+}
