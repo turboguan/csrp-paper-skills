@@ -1,97 +1,202 @@
-# CSRP Paper-as-Skill MVP v0.2 — Real Paper Demo
+<p align="center">
+  <img src="docs/assets/logo.svg" alt="CSRP Paper Skills logo" width="760"/>
+</p>
 
-A runnable research prototype for the proposed **institutional co-scientist** architecture:
+<p align="center">
+  <a href="https://github.com/turboguan/csrp-paper-skills/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/turboguan/csrp-paper-skills/actions/workflows/ci.yml/badge.svg"></a>
+  <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-3776AB">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.2.0-2a7f78">
+  <img alt="Status" src="https://img.shields.io/badge/status-research%20prototype-lightgrey">
+</p>
 
-`Papers → Paper-to-Skill Factory → Shared Skill Registry + Evidence Graph → Few Domain Agents → Evidence Judge → Safety Supervisor → Provenance-grounded answer`
+# CSRP Paper Skills
 
-**Core principle:** papers provide evidence and capabilities; agents provide reasoning and coordination.
+**A provenance-preserving paper-as-skill architecture for institutional scientific AI and cross-paper evidence synthesis.**
 
-v0.2 keeps the original synthetic fixtures for regression testing and adds **five real CSRP-linked publications** as structured Paper Skills. These records are model-curated from public sources and are **not yet expert-validated gold annotations**.
+> **Core principle:** papers provide evidence and capabilities; agents provide reasoning and coordination.
 
-## What changed in v0.2
+This repository is a runnable research prototype for testing a specific scientific-AI architecture question:
 
-- Added `real_skills/` with five real publications spanning school/youth prevention, spatial surveillance, postdischarge caring contact, means restriction and media/celebrity-suicide evidence.
-- Added claim-level provenance, applicability and safety boundaries to every real record.
-- Added `real_demo.py` and structured outputs under `outputs/real/`.
-- Exact retrieval now supports IDs such as `CSRP-REAL-004`.
-- Weighted lexical retrieval reduces weak incidental matches in the deterministic demo.
-- Query-aware claim selection keeps the shared workspace while reducing unrelated within-paper claims.
-- Added a query-level safety preflight so individual suicide-risk scoring is blocked **before evidence retrieval**.
-- Added a `heterogeneous` Evidence Judge label so different outcomes are not mislabeled as contradictions.
-- Added explicitly curated paper-level `RELATED_TO` graph edges without inventing claim-level support/contradiction relations.
-- Added real-paper validation/integration tests. Current suite: **17 passing tests**.
+**Should each scientific paper become an autonomous agent, or should papers become shared, callable evidence skills used by a small number of persistent reasoning agents?**
 
-## Repository layout
+The current v0.2 release implements the second design and validates the end-to-end information flow on both synthetic fixtures and five real CSRP-linked publications. It does **not** yet claim that Paper-as-Skill outperforms RAG, monolithic-agent, or one-paper-one-agent baselines.
+
+## Architecture
+
+<p align="center">
+  <img src="docs/assets/architecture.svg" alt="Paper-as-Skill architecture" width="100%"/>
+</p>
+
+The system follows:
 
 ```text
-csrp-paper-skill-mvp-v0.2/
-├── README.md
-├── architecture.md
-├── IMPLEMENTATION_ROADMAP.md
-├── REAL_PAPER_CATALOG.md
-├── SOURCE_MANIFEST.md
-├── demo.py                    # synthetic regression demo
-├── real_demo.py               # v0.2 real-paper demo
-├── sample_skills/             # synthetic fixtures
-├── real_skills/               # five real structured Paper Skills
-├── schemas/
-├── src/csrp_skills/
-├── tests/
-└── outputs/
-    ├── demo_output.json
-    └── real/
-        ├── real_demo_output.json
-        ├── graph_summary.json
-        └── real_demo_console.txt
+Papers
+  ↓
+Paper-to-Skill Factory
+  ↓
+Shared Paper Skill Registry + Shared Evidence Graph
+  ↓
+Few persistent Domain Agents
+  ↓
+Evidence Judge
+  ↓
+Safety Supervisor
+  ↓
+Evidence-grounded answer + claim-level provenance
 ```
+
+The key distinction is that **Paper Skill ≠ Persistent Agent**. Multiple paper skills can be loaded into one shared reasoning workspace so cross-paper relations can be evaluated without spawning one isolated agent per paper.
+
+## What v0.2 contains
+
+- Pydantic Paper Skill schema and JSON Schema export
+- claim-level provenance and source anchors
+- in-memory structured Skill Registry
+- NetworkX evidence graph
+- Universal / Selective / Indicated persistent domain roles
+- rule-based Evidence Judge
+- safety preflight + Safety Supervisor
+- synthetic regression fixtures
+- five real CSRP-linked structured Paper Skills
+- deterministic end-to-end demos
+- benchmark runner interfaces
+- unit and integration tests
+
+The current real-paper records are **model-curated research artifacts, not expert-validated gold annotations**.
 
 ## Quick start
 
 ```bash
-cd csrp-paper-skill-mvp-v0.2
+git clone https://github.com/turboguan/csrp-paper-skills.git
+cd csrp-paper-skills
 python3 -m pip install -e '.[dev]'
 python3 real_demo.py
 pytest -q
 ```
 
-The real-paper demo writes:
+The real-paper demo writes structured outputs to:
 
-- `outputs/real/real_demo_output.json`
-- `outputs/real/graph_summary.json`
+```text
+outputs/real/real_demo_output.json
+outputs/real/graph_summary.json
+```
 
-## v0.2 real-paper questions
+## Research questions this repository is designed to test
 
-1. What did `CSRP-REAL-001` find about mental-health knowledge and attitudes in S.H.I.E.L.D.S.?
-2. What does CSRP evidence suggest about restricting retail access to charcoal?
-3. How can spatial suicide-cluster evidence inform community prevention without becoming individual risk prediction?
-4. What evidence is available for postdischarge caring contact after self-harm?
-5. What prevention strategies and evidence types are represented across the five-paper workspace?
-6. What is my suicide risk percentage? — **blocked at safety preflight**.
+The future matched benchmark will compare:
 
-## Important interpretation
+1. RAG-only
+2. single monolithic agent
+3. one-paper-one-agent
+4. **Paper-as-Skill (ours)**
 
-The real-paper demo validates **information flow and architecture**, not scientific superiority. The measured local latency in the JSON output is only implementation telemetry from this deterministic prototype. It is **not** a benchmark result and must not be used in the manuscript as evidence that the architecture is faster or better.
+under increasing evidence load and matched retrieval budgets.
 
-Likewise, the five Paper Skills are not yet benchmark gold labels. Before experiment use, a domain expert should verify each population, intervention/exposure, outcome, effect estimate, claim, source anchor, causal-language flag and safety boundary.
+Primary outcomes include:
 
-## What is still intentionally a prototype
+- cross-paper relation accuracy
+- claim-level factuality
+- provenance precision / recall
+- contradiction vs heterogeneity resolution
+- evidence coverage
+- calibration / abstention
+- safety compliance
+- latency / tokens / API calls
+- coordination-message burden
 
-- PDF parsing remains basic `pypdf` extraction; tables, figures and layout-aware parsing are not yet production-grade.
-- Real Paper Skills were curated from public sources rather than generated by a validated extraction pipeline.
-- Retrieval is weighted lexical matching, not the matched hybrid retriever required for the final benchmark.
-- Domain-agent reasoning is deterministic claim synthesis, not an LLM scientific-reasoning adapter.
-- Evidence Judge logic is heuristic and unvalidated.
-- The five-paper set is heterogeneous by design and is **not** a meta-analysis corpus.
-- There are not yet enough matched evidence families to rigorously evaluate `SUPPORTS / CONTRADICTS / QUALIFIES` accuracy.
+## Current scientific status
 
-## Recommended next step
+### Demonstrated in v0.2
+- the architecture runs end to end;
+- multiple paper skills can coexist in a shared evidence workspace;
+- claim-level provenance can be carried through the pipeline;
+- individual suicide-risk scoring is blocked before evidence retrieval;
+- deterministic tests cover registry, graph, judge, safety, and orchestration logic.
 
-Expand from five papers to a **10–15 paper evidence-family pilot**, not directly to the full corpus. Add matched clusters of papers around 2–3 questions, for example:
+### Not yet demonstrated
+- superiority over RAG or multi-agent baselines;
+- validated systematic-review quality;
+- clinical utility;
+- expert-level contradiction adjudication;
+- scaling performance on the full institutional corpus.
 
-- means restriction / charcoal-burning prevention;
-- media reporting / celebrity-suicide effects;
-- school/youth gatekeeper or mental-health promotion interventions.
+See [V0.2_STATUS.md](V0.2_STATUS.md) for the exact boundary between implementation status and scientific evidence.
 
-For each evidence family, create expert labels for whether claim pairs `SUPPORT`, `CONTRADICT` or `QUALIFY` one another. That produces the first dataset capable of testing the paper’s central cross-paper reasoning hypothesis.
+## v0.3 — Evidence-Family Benchmark
 
-See `REAL_PAPER_CATALOG.md`, `SOURCE_MANIFEST.md`, `architecture.md` and `IMPLEMENTATION_ROADMAP.md`.
+The next milestone is a **10–15 paper, 2–3 family benchmark** built around matched scientific questions rather than simply adding more heterogeneous papers.
+
+Candidate families:
+
+- means restriction / charcoal-burning prevention
+- media reporting / celebrity-suicide effects
+- school/youth gatekeeper or mental-health promotion interventions
+
+For every matched claim pair, experts will adjudicate:
+
+`SUPPORTS` · `CONTRADICTS` · `QUALIFIES` · `NOT_COMPARABLE` · `UNRELATED`
+
+This will create the first gold dataset capable of testing the central architectural hypothesis.
+
+See [docs/V0.3_ROADMAP.md](docs/V0.3_ROADMAP.md).
+
+## Repository guide
+
+| File / directory | Purpose |
+|---|---|
+| `src/csrp_skills/` | Core implementation |
+| `schemas/` | Paper Skill schema |
+| `sample_skills/` | Synthetic regression fixtures |
+| `real_skills/` | Real-paper structured records |
+| `tests/` | Unit and integration tests |
+| `architecture.md` | System architecture notes |
+| `REAL_PAPER_CATALOG.md` | Real-paper catalog |
+| `SOURCE_MANIFEST.md` | Source/provenance manifest |
+| `REPRODUCIBILITY.md` | Reproducibility policy |
+| `CONTRIBUTING.md` | Contribution guidelines |
+| `DISCLAIMER.md` | Research and clinical-use disclaimer |
+
+## Safety boundary
+
+This repository is an **academic research prototype**, not a clinical decision-support system.
+
+It must not be used for:
+- autonomous individual suicide-risk scoring;
+- diagnosis or triage;
+- treatment selection;
+- unsupported clinical recommendation.
+
+Individual-facing uses would require substantially stronger validation, governance, privacy protections, and human oversight.
+
+See [DISCLAIMER.md](DISCLAIMER.md) and [SECURITY.md](SECURITY.md).
+
+## Citation
+
+Citation metadata is provided in [CITATION.cff](CITATION.cff). GitHub will expose a **Cite this repository** action after it is merged into the default branch.
+
+Suggested project citation:
+
+> Guan, J. (2026). *CSRP Paper-as-Skill: A provenance-preserving architecture for institutional scientific AI* (v0.2.0). GitHub repository.
+
+A DOI should be added later through an archival release service once the benchmark corpus and first stable research release are frozen.
+
+## Contributing
+
+Contributions are welcome, especially around:
+
+- evidence-family construction;
+- claim-level provenance validation;
+- graph relation adjudication;
+- benchmark runners;
+- reproducibility tooling;
+- safety and uncertainty evaluation.
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
+
+## Project status
+
+**Research prototype — v0.2**
+
+The repository is being developed alongside a scientific manuscript on shared Paper Skills, institutional evidence graphs, and sparse persistent agency.
+
+**Tagline:** *Evidence is shared; agency is scarce.*
