@@ -1,0 +1,58 @@
+{
+  "paper_id": "CSRP-REAL-003",
+  "citation": "Law YW, Lok RHT, Chiang B, Lai CCS, Tsui SHM, Chung PYJ, Leung SC. Effects of Community-Based Caring Contact in Reducing Thwarted Belongingness Among Postdischarge Young Adults With Self-Harm: Randomized Controlled Trial. JMIR Formative Research. 2023;7:e43526. doi:10.2196/43526.",
+  "title": "Effects of Community-Based Caring Contact in Reducing Thwarted Belongingness Among Postdischarge Young Adults With Self-Harm: Randomized Controlled Trial",
+  "abstract": "Pragmatic randomized controlled trial evaluating a self-help mobile app, with or without volunteer support, as an adjunct to treatment as usual for postdischarge adults aged 18–45 with self-harm or suicide attempts.",
+  "study_type": "pragmatic randomized controlled trial",
+  "population": ["postdischarge adults aged 18-45 with self-harm or suicide attempts in Hong Kong"],
+  "setting": ["four Hong Kong hospital emergency departments","postdischarge community follow-up"],
+  "intervention_or_exposure": ["mobile app plus volunteer support plus treatment as usual","mobile app plus treatment as usual"],
+  "comparator": ["treatment as usual"],
+  "outcomes": ["service compliance","suicidal ideation","hopelessness","perceived burdensomeness","thwarted belongingness"],
+  "effect_estimates": [],
+  "uncertainty": ["Only 40 participants were recruited.","The article describes the findings as preliminary/formative and recommends cautious implementation.","Attrition and disruptions to recruitment/follow-up limit precision and generalizability."],
+  "methods": ["three-arm pragmatic randomized controlled trial","four monthly measurement time points","self-administered mobile questionnaires after baseline"],
+  "evidence_claims": [
+    {
+      "claim_id":"CSRP-REAL-003-C01",
+      "statement":"In this small pragmatic RCT (n=40), adding volunteer care to a self-help mobile app and treatment as usual was associated with improved service compliance during postdischarge follow-up.",
+      "direction":"beneficial",
+      "population":"postdischarge adults aged 18-45 with self-harm or suicide attempts in Hong Kong",
+      "intervention_or_exposure":"mobile app plus volunteer support plus treatment as usual",
+      "outcome":"service compliance",
+      "method":"pragmatic randomized controlled trial",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"JMIR article, Abstract Results","source_span":"The abstract reports 40 participants and improved service compliance when volunteer care was blended with the app."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-003-C02",
+      "statement":"The authors report that reductions in perceived burdensomeness and thwarted belongingness in the caring-contact condition were linked to transient improvements in hopelessness and suicide-related outcomes, but the small formative sample limits certainty.",
+      "direction":"beneficial",
+      "population":"postdischarge adults aged 18-45 with self-harm or suicide attempts in Hong Kong",
+      "intervention_or_exposure":"mobile app plus volunteer support plus treatment as usual",
+      "outcome":"thwarted belongingness",
+      "method":"pragmatic randomized controlled trial",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"JMIR article, Abstract Results and Discussion","source_span":"The paper links changes in interpersonal constructs to transient improvements and explicitly frames implementation cautiously."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-003-C03",
+      "statement":"The authors conclude that the app-plus-volunteer strategy may cautiously strengthen continuity of care after hospital discharge, while emphasizing the formative nature of the evidence.",
+      "direction":"descriptive",
+      "population":"postdischarge adults aged 18-45 with self-harm or suicide attempts in Hong Kong",
+      "intervention_or_exposure":"mobile app plus volunteer support plus treatment as usual",
+      "outcome":"service compliance",
+      "method":"author interpretation of pragmatic randomized controlled trial",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"JMIR article, Abstract Conclusions","source_span":"The conclusion recommends only cautious implementation of the combined strategy."}]
+    }
+  ],
+  "limitations": ["Small sample (n=40).","Formative study with limited precision.","Recruitment/follow-up disruptions and attrition reduce confidence in estimates.","The study does not justify individual suicide-risk scoring."],
+  "applicability": ["Potentially relevant to continuity-of-care programmes for postdischarge adults with self-harm in similar health-system settings.","Requires larger confirmatory studies before strong effectiveness claims."],
+  "safety_boundaries": ["Do not use study group averages to calculate a person’s suicide-risk percentage.","Do not infer that the app/volunteer intervention replaces professional clinical care."],
+  "resources": [{"kind":"paper","uri":"https://formative.jmir.org/2023/1/e43526","description":"Open-access full text"},{"kind":"paper","uri":"https://doi.org/10.2196/43526","description":"DOI"}],
+  "executable_tools": [],
+  "provenance": [{"source_type":"metadata","locator":"JMIR Formative Research article e43526"}],
+  "related_papers": [],
+  "metadata": {"record_status":"real_publication","source_level":"full_text","human_validation_status":"model_curated_not_expert_validated","doi":"10.2196/43526","year":2023,"journal":"JMIR Formative Research","prevention_level":"indicated","topic_tags":["self-harm","postdischarge","caring contact","mobile app","volunteer support"]}
+}

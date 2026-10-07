@@ -1,0 +1,58 @@
+{
+  "paper_id": "V03-MEANS-003",
+  "citation": "Chang SS, Lin CY, Hsu CY, Chen YY, Yip PSF. Assessing the effect of restricting access to barbecue charcoal for suicide prevention in New Taipei City, Taiwan: A controlled interrupted time series analysis. Journal of Affective Disorders. 2021;282:795-802. doi:10.1016/j.jad.2020.12.147.",
+  "title": "Assessing the effect of restricting access to barbecue charcoal for suicide prevention in New Taipei City, Taiwan: A controlled interrupted time series analysis",
+  "abstract": "Longer-term controlled interrupted time-series evaluation of the same New Taipei City charcoal-restriction programme over 2007-2017.",
+  "study_type": "controlled interrupted time series",
+  "population": ["residents of New Taipei City and two comparison cities, Taiwan"],
+  "setting": ["New Taipei City, Taiwan", "large chain retail stores"],
+  "intervention_or_exposure": ["restricted retail access to barbecue charcoal"],
+  "comparator": ["two comparison cities"],
+  "outcomes": ["charcoal-burning suicide rate", "all-method suicide rate"],
+  "effect_estimates": [
+    {"outcome":"charcoal-burning suicide rate","measure":"intervention-minus-comparison step change","estimate":-0.336,"lower_ci":-1.173,"upper_ci":0.502,"unit":"per 100,000"},
+    {"outcome":"all-method suicide rate","measure":"intervention-minus-comparison step change","estimate":-0.270,"lower_ci":-1.844,"upper_ci":1.303,"unit":"per 100,000"},
+    {"outcome":"charcoal-burning suicide rate","measure":"difference in trend change","estimate":0.007,"lower_ci":-0.055,"upper_ci":0.069,"unit":"rate slope"}
+  ],
+  "uncertainty": [
+    "The restriction programme was voluntary and not legislatively enforced.",
+    "The programme covered only a subset of retail stores.",
+    "Confidence intervals included the null for reported step and trend differences."
+  ],
+  "methods": ["controlled interrupted time series", "quarterly age-standardised suicide rates", "comparison-city analysis"],
+  "evidence_claims": [
+    {
+      "claim_id":"V03-MEANS-003-C01",
+      "statement":"Across the longer follow-up, the controlled interrupted time-series analysis found no clear reduction in charcoal-burning suicide attributable to the New Taipei restriction programme.",
+      "direction":"null",
+      "population":"residents of New Taipei City and two comparison cities, Taiwan",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"charcoal-burning suicide rate",
+      "method":"controlled interrupted time series",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"metadata","locator":"PubMed PMID 33601720, Abstract: Results and Conclusion"}]
+    },
+    {
+      "claim_id":"V03-MEANS-003-C02",
+      "statement":"The authors highlighted incomplete coverage and lack of legislative enforcement as limitations relevant to interpreting long-term programme effectiveness.",
+      "direction":"descriptive",
+      "population":"residents of New Taipei City and two comparison cities, Taiwan",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"all-method suicide rate",
+      "method":"controlled interrupted time series",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"metadata","locator":"PubMed PMID 33601720, Abstract: Limitations"}]
+    }
+  ],
+  "limitations":["Voluntary rather than mandatory intervention.","Intervention limited to a subset of stores."],
+  "applicability":["Useful for long-term sustainability questions in population-level means restriction."],
+  "safety_boundaries":["Do not translate city-level effects into individual risk estimates.","Do not use this record to provide self-harm method instructions."],
+  "resources":[
+    {"kind":"paper","uri":"https://pubmed.ncbi.nlm.nih.gov/33601720/","description":"PubMed record and abstract"},
+    {"kind":"paper","uri":"https://hub.hku.hk/handle/10722/306753","description":"HKU Scholars Hub record"}
+  ],
+  "executable_tools":[],
+  "provenance":[{"source_type":"metadata","locator":"PubMed PMID 33601720"}],
+  "related_papers":["CSRP-REAL-004","V03-MEANS-002","V03-MEANS-004"],
+  "metadata":{"record_status":"real_publication_candidate","source_level":"abstract_and_repository_metadata","human_validation_status":"model_curated_not_expert_validated","doi":"10.1016/j.jad.2020.12.147","year":2021,"journal":"Journal of Affective Disorders","prevention_level":"universal","topic_tags":["means restriction","charcoal burning","long-term follow-up","Taiwan"]}
+}

@@ -1,0 +1,62 @@
+{
+  "paper_id": "CSRP-REAL-004",
+  "citation": "Yip PSF, Law CK, Fu KW, Law YW, Wong PWC, Xu Y. Restricting the means of suicide by charcoal burning. British Journal of Psychiatry. 2010;196:241–242. doi:10.1192/bjp.bp.109.065185.",
+  "title": "Restricting the means of suicide by charcoal burning",
+  "abstract": "Exploratory controlled community trial comparing a Hong Kong district where barbecue charcoal was removed from open retail shelves with a control district where charcoal remained openly displayed.",
+  "study_type": "exploratory controlled community trial",
+  "population": ["residents of Tuen Mun and Yuen Long, Hong Kong"],
+  "setting": ["Tuen Mun, Hong Kong","Yuen Long, Hong Kong","major retail outlets"],
+  "intervention_or_exposure": ["restricted retail access to barbecue charcoal"],
+  "comparator": ["usual open-shelf charcoal display in control district"],
+  "outcomes": ["charcoal-burning suicide rate","all-method suicide rate","non-charcoal suicide rate"],
+  "effect_estimates": [
+    {"outcome":"charcoal-burning suicide rate","measure":"Tuen Mun rate per 100,000 before→during intervention","estimate":"4.3→2.0 (-53.5%)","unit":"per 100,000"},
+    {"outcome":"all-method suicide rate","measure":"Tuen Mun rate per 100,000 before→during intervention","estimate":"17.9→12.2 (-31.8%)","unit":"per 100,000"},
+    {"outcome":"charcoal-burning suicide rate","measure":"Yuen Long control rate per 100,000 before→during intervention","estimate":"3.0→4.3 (+43.3%)","unit":"per 100,000"}
+  ],
+  "uncertainty": ["Exploratory district-level controlled trial rather than an individually randomized trial.","Potential contextual differences between districts may remain despite controlled comparisons."],
+  "methods": ["12-month community retail access intervention","controlled district comparison","Poisson regression adjusted for age and gender"],
+  "evidence_claims": [
+    {
+      "claim_id":"CSRP-REAL-004-C01",
+      "statement":"During the 12-month intervention, the charcoal-burning suicide rate in Tuen Mun fell from 4.3 to 2.0 per 100,000 (a 53.5% reduction), while the control district increased from 3.0 to 4.3 per 100,000.",
+      "direction":"beneficial",
+      "population":"residents of Tuen Mun and Yuen Long, Hong Kong",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"charcoal-burning suicide rate",
+      "method":"exploratory controlled community trial",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"page","locator":"British Journal of Psychiatry short report, Results, p. 241","source_span":"The report gives pre/post district rates and percentage changes for charcoal-burning suicide."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-004-C02",
+      "statement":"The all-method suicide rate in Tuen Mun fell from 17.9 to 12.2 per 100,000 (31.8%), compared with a 1.6% reduction in Yuen Long.",
+      "direction":"beneficial",
+      "population":"residents of Tuen Mun and Yuen Long, Hong Kong",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"all-method suicide rate",
+      "method":"exploratory controlled community trial",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"page","locator":"British Journal of Psychiatry short report, Results, p. 241","source_span":"The report compares all-method suicide-rate changes in intervention and control districts."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-004-C03",
+      "statement":"The study did not observe a significant increase in suicide by other methods, providing no clear evidence of method substitution during the intervention period.",
+      "direction":"null",
+      "population":"residents of Tuen Mun and Yuen Long, Hong Kong",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"non-charcoal suicide rate",
+      "method":"exploratory controlled community trial",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"British Journal of Psychiatry, Summary and Methods","source_span":"The authors report no significant change in suicide using other methods and explicitly tested for method substitution."}]
+    }
+  ],
+  "limitations": ["Community-level exploratory design, not individual randomization.","Results come from two Hong Kong districts and may depend on local retail and method-use patterns.","Short report provides limited detail compared with a full-scale trial report."],
+  "applicability": ["Supports evaluation of population-level means-restriction strategies in contexts where charcoal burning is a common suicide method.","Requires local adaptation before transfer to settings with different means patterns or retail systems."],
+  "safety_boundaries": ["Do not interpret community-level rate changes as an individual treatment effect.","This evidence supports population prevention policy, not instructions concerning methods of self-harm."],
+  "resources": [{"kind":"paper","uri":"https://www.cambridge.org/core/journals/the-british-journal-of-psychiatry/article/restricting-the-means-of-suicide-by-charcoalburning/AF0773CEC1B356B062466BF3EC79D06D","description":"Publisher article page"},{"kind":"paper","uri":"https://doi.org/10.1192/bjp.bp.109.065185","description":"DOI"}],
+  "executable_tools": [],
+  "provenance": [{"source_type":"metadata","locator":"British Journal of Psychiatry 196:241–242"}],
+  "related_papers": ["CSRP-REAL-002"],
+  "metadata": {"record_status":"real_publication","source_level":"full_text","human_validation_status":"model_curated_not_expert_validated","doi":"10.1192/bjp.bp.109.065185","year":2010,"journal":"British Journal of Psychiatry","prevention_level":"universal","topic_tags":["means restriction","charcoal burning","population intervention"]}
+}

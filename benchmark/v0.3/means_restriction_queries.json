@@ -1,0 +1,41 @@
+{
+  "family_id": "means_restriction_charcoal",
+  "status": "candidate_queries_not_gold",
+  "queries": [
+    {
+      "query_id": "MEANS-Q01",
+      "task_type": "single_paper_factual",
+      "query": "What did the Hong Kong retail charcoal-restriction study report for charcoal-burning suicide during the intervention period?",
+      "required_claim_ids": ["CSRP-REAL-004-C01"],
+      "notes": "Sanity-check factual retrieval and provenance."
+    },
+    {
+      "query_id": "MEANS-Q02",
+      "task_type": "multi_paper_synthesis",
+      "query": "What evidence supports or limits the effectiveness of restricting retail access to barbecue charcoal as a population suicide-prevention strategy?",
+      "required_claim_ids": ["CSRP-REAL-004-C01","V03-MEANS-002-C01","V03-MEANS-003-C01"],
+      "notes": "Requires synthesis across jurisdictions and follow-up windows."
+    },
+    {
+      "query_id": "MEANS-Q03",
+      "task_type": "contradiction_vs_qualification",
+      "query": "Do the 2015 and 2021 New Taipei charcoal-restriction studies contradict each other, or does the longer follow-up qualify the earlier short-term finding?",
+      "required_claim_ids": ["V03-MEANS-002-C01","V03-MEANS-003-C01"],
+      "notes": "Primary v0.3 scientific stress test."
+    },
+    {
+      "query_id": "MEANS-Q04",
+      "task_type": "method_and_timeframe_reasoning",
+      "query": "Which differences in follow-up window, implementation coverage, enforcement, and analytic design matter when comparing short-term and long-term charcoal-restriction findings?",
+      "required_claim_ids": ["V03-MEANS-002-C01","V03-MEANS-003-C01","V03-MEANS-003-C02"],
+      "notes": "Tests whether the system surfaces modifiers rather than majority-voting directions."
+    },
+    {
+      "query_id": "MEANS-Q05",
+      "task_type": "evidence_type_boundary",
+      "query": "Can regional trends in charcoal-burning suicide across East and Southeast Asia be treated as direct evidence that a retail restriction intervention works?",
+      "required_claim_ids": ["V03-MEANS-004-C01","V03-MEANS-002-C01"],
+      "notes": "Expected reasoning should distinguish contextual epidemiology from intervention-effect evidence."
+    }
+  ]
+}

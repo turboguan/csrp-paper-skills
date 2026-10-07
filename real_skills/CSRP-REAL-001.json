@@ -1,0 +1,58 @@
+{
+  "paper_id": "CSRP-REAL-001",
+  "citation": "Lui ID, Law TWS, Chung CL, Wong SSY, So WWY, Lee J, Yip PSF. Development and evaluation of a mental health and suicide prevention student leadership training programme for secondary school students in Hong Kong. BMC Pediatrics. Published online 5 Jan 2026. doi:10.1186/s12887-025-06461-3.",
+  "title": "Development and evaluation of a mental health and suicide prevention student leadership training programme for secondary school students in Hong Kong",
+  "abstract": "Evaluation of the S.H.I.E.L.D.S. school-based programme, which trained Hong Kong secondary-school student leaders as mental-health gatekeepers and supported student-led mental-health promotion activities.",
+  "study_type": "mixed-method pre-post programme evaluation",
+  "population": ["secondary school student leaders in Hong Kong","secondary school general students in Hong Kong","school staff advisors in Hong Kong"],
+  "setting": ["eight Hong Kong secondary schools","S.H.I.E.L.D.S. programme rounds, June 2022 to June 2023"],
+  "intervention_or_exposure": ["S.H.I.E.L.D.S. student mental-health gatekeeper and leadership programme"],
+  "comparator": ["within-participant pre-programme measurements"],
+  "outcomes": ["mental health knowledge and attitudes","gatekeeper self-efficacy and perceived ability to help peers","help-seeking willingness and school social environment","programme acceptability"],
+  "effect_estimates": [],
+  "uncertainty": ["No randomized control group was used in this programme evaluation.","Several quantitative outcomes showed small or non-significant changes despite positive qualitative feedback."],
+  "methods": ["pre-post questionnaires","post-programme interviews","mixed-method analysis"],
+  "evidence_claims": [
+    {
+      "claim_id": "CSRP-REAL-001-C01",
+      "statement": "Across 89 student leaders, 33 staff advisors and 423 general students from eight schools, quantitative analyses reported no significant overall changes in student leaders’ and general students’ mental-health knowledge and attitudes, while qualitative feedback was more positive.",
+      "direction": "null",
+      "population": "secondary school student leaders in Hong Kong",
+      "intervention_or_exposure": "S.H.I.E.L.D.S. student mental-health gatekeeper and leadership programme",
+      "outcome": "mental health knowledge and attitudes",
+      "method": "mixed-method pre-post programme evaluation",
+      "causal_language_allowed": false,
+      "provenance": [{"source_type":"page","locator":"Accepted manuscript, pp. 2–3, Methods/Results summary","source_span":"The abstract reports participant counts and a null overall quantitative pattern for knowledge/attitudes, alongside positive qualitative feedback."}]
+    },
+    {
+      "claim_id": "CSRP-REAL-001-C02",
+      "statement": "Student leaders and staff described perceived gains in leaders’ mental-health knowledge and ability to help peers, but these self-reported qualitative findings should not be treated as causal evidence of improved clinical outcomes.",
+      "direction": "beneficial",
+      "population": "secondary school student leaders in Hong Kong",
+      "intervention_or_exposure": "S.H.I.E.L.D.S. student mental-health gatekeeper and leadership programme",
+      "outcome": "gatekeeper self-efficacy and perceived ability to help peers",
+      "method": "post-programme qualitative interviews",
+      "causal_language_allowed": false,
+      "provenance": [{"source_type":"page","locator":"Accepted manuscript, p. 3, Results summary","source_span":"Qualitative feedback indicated that leaders perceived improvements in knowledge and ability to help peers; staff observations were directionally similar."}]
+    },
+    {
+      "claim_id": "CSRP-REAL-001-C03",
+      "statement": "The authors note that the relatively short programme duration may have limited measurable changes and recommend longer-duration and longitudinal evaluation.",
+      "direction": "descriptive",
+      "population": "secondary school student leaders in Hong Kong",
+      "intervention_or_exposure": "S.H.I.E.L.D.S. student mental-health gatekeeper and leadership programme",
+      "outcome": "mental health knowledge and attitudes",
+      "method": "author limitation assessment",
+      "causal_language_allowed": false,
+      "provenance": [{"source_type":"page","locator":"Accepted manuscript, p. 32, Discussion/limitations","source_span":"The manuscript explicitly identifies short programme duration as a limitation and calls for longer and longitudinal follow-up."}]
+    }
+  ],
+  "limitations": ["Short programme duration.","Pre-post programme evaluation without a randomized control group.","Quantitative and qualitative results were not uniformly aligned.","The study evaluated knowledge, attitudes, help-giving and implementation outcomes rather than suicide mortality."],
+  "applicability": ["Useful for school-based mental-health promotion and gatekeeper-programme design in Hong Kong secondary schools.","Does not by itself establish an effect on suicide attempts or suicide mortality."],
+  "safety_boundaries": ["Do not infer an individual student’s suicide risk from these programme-level findings.","Do not present programme acceptability or self-efficacy changes as evidence of reduced suicide mortality."],
+  "resources": [{"kind":"paper","uri":"https://hub.hku.hk/bitstream/10722/368551/1/content.pdf","description":"HKU Scholars Hub accepted manuscript PDF"},{"kind":"paper","uri":"https://doi.org/10.1186/s12887-025-06461-3","description":"DOI"}],
+  "executable_tools": [],
+  "provenance": [{"source_type":"metadata","locator":"HKU Scholars Hub record 10722/368551"}],
+  "related_papers": [],
+  "metadata": {"record_status":"real_publication","source_level":"full_text","human_validation_status":"model_curated_not_expert_validated","doi":"10.1186/s12887-025-06461-3","year":2026,"journal":"BMC Pediatrics","prevention_level":"selective","topic_tags":["youth","school","gatekeeper","mental health promotion"]}
+}

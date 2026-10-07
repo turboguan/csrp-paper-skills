@@ -1,0 +1,62 @@
+{
+  "paper_id": "CSRP-REAL-002",
+  "citation": "Yeung CY, Men VY, Guo Y, Yip PSF. Spatial–temporal analysis of suicide clusters for suicide prevention in Hong Kong: a territory-wide study using 2014–2018 Hong Kong Coroner’s Court reports. The Lancet Regional Health – Western Pacific. 2023;39:100820. doi:10.1016/j.lanwpc.2023.100820.",
+  "title": "Spatial–temporal analysis of suicide clusters for suicide prevention in Hong Kong: a territory-wide study using 2014–2018 Hong Kong Coroner’s Court reports",
+  "abstract": "Territory-wide retrospective spatial-temporal analysis of Hong Kong suicide deaths to identify high-risk clusters by method and compare characteristics inside and outside identified clusters.",
+  "study_type": "retrospective ecological spatiotemporal analysis",
+  "population": ["suicide deaths in Hong Kong, 2014-2018"],
+  "setting": ["Hong Kong small tertiary planning units","Hong Kong Coroner’s Court records"],
+  "intervention_or_exposure": ["spatial-temporal suicide clustering","area-level social disadvantage"],
+  "comparator": ["spatial units outside identified clusters"],
+  "outcomes": ["suicide cluster detection by method","area-level relative suicide risk","area-level social disadvantage within clusters"],
+  "effect_estimates": [
+    {"outcome":"area-level relative suicide risk","measure":"relative risk, residence-based overall-suicide cluster","estimate":1.47},
+    {"outcome":"area-level relative suicide risk","measure":"relative risk, residence-based jumping cluster","estimate":1.89},
+    {"outcome":"area-level relative suicide risk","measure":"relative risk, residence-based charcoal-burning cluster","estimate":4.34}
+  ],
+  "uncertainty": ["Cluster-level relative risks describe ecological space-time concentrations and are not individual risk estimates.","Community-level characteristics were based on area-level data and are vulnerable to ecological inference limitations."],
+  "methods": ["retrospective space-time scan analysis","bivariate comparison of cases and spatial units inside versus outside clusters","ArcGIS mapping"],
+  "evidence_claims": [
+    {
+      "claim_id":"CSRP-REAL-002-C01",
+      "statement":"Among 4,672 suicide deaths recorded in Hong Kong from 2014 to 2018, the study identified statistically significant spatial-temporal clusters for jumping and charcoal burning, but not for hanging.",
+      "direction":"descriptive",
+      "population":"suicide deaths in Hong Kong, 2014-2018",
+      "intervention_or_exposure":"spatial-temporal suicide clustering",
+      "outcome":"suicide cluster detection by method",
+      "method":"retrospective ecological spatiotemporal analysis",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"page","locator":"Article pp. 1 and 4, Summary Findings and Results","source_span":"The paper reports 4,672 cases and identifies clusters for jumping and charcoal burning, with no significant hanging cluster."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-002-C02",
+      "statement":"For residence-based clusters, reported relative risks were 1.47 for overall suicide, 1.89 for jumping and 4.34 for charcoal burning during the identified cluster periods.",
+      "direction":"descriptive",
+      "population":"suicide deaths in Hong Kong, 2014-2018",
+      "intervention_or_exposure":"spatial-temporal suicide clustering",
+      "outcome":"area-level relative suicide risk",
+      "method":"retrospective ecological spatiotemporal analysis",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"table","locator":"Article Table 1, p. 4","source_span":"Table 1 reports the cluster periods, case counts, population sizes, relative risks and p-values."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-002-C03",
+      "statement":"Most overall-suicide and jumping clusters were located in spatial units that were more socially disadvantaged than units outside the clusters.",
+      "direction":"descriptive",
+      "population":"suicide deaths in Hong Kong, 2014-2018",
+      "intervention_or_exposure":"area-level social disadvantage",
+      "outcome":"area-level social disadvantage within clusters",
+      "method":"ecological post-hoc comparison",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"page","locator":"Article pp. 1 and 4, Findings/Post-hoc analyses","source_span":"The authors report greater social disadvantage in most overall and jumping cluster areas relative to outside areas."}]
+    }
+  ],
+  "limitations": ["Ecological/area-level analysis cannot be used to infer an individual’s suicide probability.","Cluster detection depends on spatial-unit definitions, time windows and available location data.","Community-level characteristics do not establish individual-level causal mechanisms."],
+  "applicability": ["Supports population-level surveillance, area prioritization and community prevention planning.","Useful for targeting further investigation and services, not for individual prediction."],
+  "safety_boundaries": ["Never convert area-level cluster relative risk into an individual suicide-risk percentage.","Do not label residents within a cluster as high-risk individuals solely on the basis of geography."],
+  "resources": [{"kind":"paper","uri":"https://hub.hku.hk/bitstream/10722/348340/1/content.pdf","description":"Open-access manuscript PDF"},{"kind":"paper","uri":"https://doi.org/10.1016/j.lanwpc.2023.100820","description":"DOI"}],
+  "executable_tools": [],
+  "provenance": [{"source_type":"metadata","locator":"HKU Scholars Hub record 10722/348340"}],
+  "related_papers": ["CSRP-REAL-004"],
+  "metadata": {"record_status":"real_publication","source_level":"full_text","human_validation_status":"model_curated_not_expert_validated","doi":"10.1016/j.lanwpc.2023.100820","year":2023,"journal":"The Lancet Regional Health – Western Pacific","prevention_level":"universal","topic_tags":["surveillance","spatial analysis","clusters","social disadvantage"]}
+}

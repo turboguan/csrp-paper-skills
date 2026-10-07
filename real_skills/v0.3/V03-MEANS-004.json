@@ -1,0 +1,50 @@
+{
+  "paper_id": "V03-MEANS-004",
+  "citation": "Chang SS, Chen YY, Yip PSF, Lee WJ, Hagihara A, Gunnell D. Regional changes in charcoal-burning suicide rates in East/Southeast Asia from 1995 to 2011: a time trend analysis. PLoS Medicine. 2014;11(4):e1001622. doi:10.1371/journal.pmed.1001622.",
+  "title": "Regional changes in charcoal-burning suicide rates in East/Southeast Asia from 1995 to 2011: a time trend analysis",
+  "abstract": "Regional observational analysis of the spread and timing of charcoal-burning suicide across East and Southeast Asia.",
+  "study_type": "regional time trend analysis",
+  "population": ["populations of selected East and Southeast Asian countries"],
+  "setting": ["Hong Kong", "Taiwan", "Japan", "Republic of Korea", "Singapore"],
+  "intervention_or_exposure": ["regional adoption and spread of charcoal-burning suicide"],
+  "comparator": ["countries and periods with differing charcoal-burning trends"],
+  "outcomes": ["charcoal-burning suicide rate", "all-method suicide rate"],
+  "effect_estimates": [],
+  "uncertainty": ["Observational regional trend analysis cannot estimate the effect of a specific retail restriction intervention.","Coding practices for charcoal-burning suicide varied across countries."],
+  "methods": ["joinpoint regression", "negative binomial regression", "regional time trend analysis"],
+  "evidence_claims": [
+    {
+      "claim_id":"V03-MEANS-004-C01",
+      "statement":"Charcoal-burning suicide rose markedly in several, but not all, East and Southeast Asian settings, with substantial variation in timing and scale across countries.",
+      "direction":"descriptive",
+      "population":"populations of selected East and Southeast Asian countries",
+      "intervention_or_exposure":"regional adoption and spread of charcoal-burning suicide",
+      "outcome":"charcoal-burning suicide rate",
+      "method":"regional time trend analysis",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"metadata","locator":"PubMed PMID 24691071, Abstract: Results and Conclusions"}]
+    },
+    {
+      "claim_id":"V03-MEANS-004-C02",
+      "statement":"Increases in charcoal-burning suicide were associated with increases in overall suicide in some settings but not consistently across all countries and demographic groups.",
+      "direction":"mixed",
+      "population":"populations of selected East and Southeast Asian countries",
+      "intervention_or_exposure":"regional adoption and spread of charcoal-burning suicide",
+      "outcome":"all-method suicide rate",
+      "method":"regional time trend analysis",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"metadata","locator":"PubMed PMID 24691071, Abstract: Results"}]
+    }
+  ],
+  "limitations":["Ecological observational design.","Variation in coding practices and data completeness across countries."],
+  "applicability":["Provides epidemiological context for why means-restriction policies may have different relevance across regions."],
+  "safety_boundaries":["Do not infer individual suicide risk from regional trends."],
+  "resources":[
+    {"kind":"paper","uri":"https://pubmed.ncbi.nlm.nih.gov/24691071/","description":"PubMed record and abstract"},
+    {"kind":"paper","uri":"https://pmc.ncbi.nlm.nih.gov/articles/PMC3972087/","description":"Open full text"}
+  ],
+  "executable_tools":[],
+  "provenance":[{"source_type":"metadata","locator":"PubMed PMID 24691071"}],
+  "related_papers":["CSRP-REAL-004","V03-MEANS-002","V03-MEANS-003"],
+  "metadata":{"record_status":"real_publication_candidate","source_level":"open_full_text_available","human_validation_status":"model_curated_not_expert_validated","doi":"10.1371/journal.pmed.1001622","year":2014,"journal":"PLoS Medicine","prevention_level":"universal","topic_tags":["charcoal burning","regional epidemiology","means restriction context"]}
+}

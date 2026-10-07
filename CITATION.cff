@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software or its structured research artifacts, please cite this repository."
+title: "CSRP Paper-as-Skill: A provenance-preserving architecture for institutional scientific AI"
+type: software
+version: 0.2.0
+date-released: 2026-10-08
+authors:
+  - family-names: "Guan"
+    given-names: "Jiahao"
+repository-code: "https://github.com/turboguan/csrp-paper-skills"
+url: "https://github.com/turboguan/csrp-paper-skills"
+abstract: >-
+  A research prototype that represents scientific papers as shared, structured,
+  provenance-preserving skills and reserves persistent agency for a small number
+  of domain-level reasoning roles. The repository includes deterministic
+  demonstrations, real-paper structured records, an evidence graph, an Evidence
+  Judge, and a Safety Supervisor for high-risk scientific evidence synthesis.
+keywords:
+  - scientific AI
+  - paper-as-skill
+  - evidence synthesis
+  - provenance
+  - multi-agent systems
+  - suicide prevention

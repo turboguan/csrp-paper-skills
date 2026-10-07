@@ -1,0 +1,58 @@
+{
+  "paper_id": "CSRP-REAL-005",
+  "citation": "Yip PSF, Fu KW, Yang KCT, Ip BYT, Chan CLW, Chen EYH, Lee DTS, Law FYW, Hawton K. The effects of a celebrity suicide on suicide rates in Hong Kong. Journal of Affective Disorders. 2006;93(1–3):245–252. doi:10.1016/j.jad.2006.03.015.",
+  "title": "The effects of a celebrity suicide on suicide rates in Hong Kong",
+  "abstract": "Population-level observational study examining suicide rates in Hong Kong after the highly publicized suicide of a celebrity in 2003, with comparisons to preceding and historical periods and qualitative review of case files.",
+  "study_type": "observational population time-series / natural-experiment analysis",
+  "population": ["Hong Kong population in 2003","Hong Kong men aged 25-39 in 2003"],
+  "setting": ["Hong Kong population suicide surveillance","post-celebrity-suicide media environment"],
+  "intervention_or_exposure": ["high-profile celebrity suicide with extensive media coverage"],
+  "comparator": ["preceding three months in 2003","corresponding periods in 1998-2002"],
+  "outcomes": ["suicide counts","suicide by jumping"],
+  "effect_estimates": [],
+  "uncertainty": ["Excess-suicide statistical analyses were based on aggregated population data.","Observational design cannot isolate media exposure from all concurrent influences."],
+  "methods": ["population suicide-rate comparison across time periods","subgroup analysis by age/sex/method","qualitative review of case files and suicide notes"],
+  "evidence_claims": [
+    {
+      "claim_id":"CSRP-REAL-005-C01",
+      "statement":"Suicides increased after the extensively reported celebrity suicide compared with reference periods, with a particularly marked pattern among men aged 25–39 and many deaths by jumping.",
+      "direction":"harmful",
+      "population":"Hong Kong men aged 25-39 in 2003",
+      "intervention_or_exposure":"high-profile celebrity suicide with extensive media coverage",
+      "outcome":"suicide counts",
+      "method":"observational population time-series / natural-experiment analysis",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"PubMed/Journal abstract, Results","source_span":"The abstract reports a significant post-event increase, especially among men aged 25–39, many of whom died by jumping."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-005-C02",
+      "statement":"Case-file review found frequent references to the celebrity, supporting a plausible media-related influence while remaining observational evidence.",
+      "direction":"descriptive",
+      "population":"Hong Kong population in 2003",
+      "intervention_or_exposure":"high-profile celebrity suicide with extensive media coverage",
+      "outcome":"suicide counts",
+      "method":"qualitative case-file review",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"Journal abstract, qualitative case-file findings","source_span":"The report notes that the celebrity’s name was often mentioned in case files or notes."}]
+    },
+    {
+      "claim_id":"CSRP-REAL-005-C03",
+      "statement":"The authors explicitly note that the statistical evidence for excess suicides was based on aggregated data, limiting individual-level inference.",
+      "direction":"descriptive",
+      "population":"Hong Kong population in 2003",
+      "intervention_or_exposure":"high-profile celebrity suicide with extensive media coverage",
+      "outcome":"suicide counts",
+      "method":"observational population time-series / natural-experiment analysis",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"text_span","locator":"Journal article, Limitations","source_span":"The article notes that excess-suicide statistical results were based on aggregated data."}]
+    }
+  ],
+  "limitations": ["Observational population-level design.","Aggregated data limit individual-level inference.","Concurrent societal or media factors may confound before/after comparisons."],
+  "applicability": ["Relevant to responsible media-reporting policy and population-level postvention planning.","Does not identify which individual media consumers will be affected."],
+  "safety_boundaries": ["Do not use exposure to media coverage as an individual suicide-risk score.","Do not infer individual causality from aggregate population changes."],
+  "resources": [{"kind":"paper","uri":"https://pubmed.ncbi.nlm.nih.gov/16697047/","description":"PubMed record with abstract and identifiers"},{"kind":"paper","uri":"https://pmc.ncbi.nlm.nih.gov/articles/PMC7112587/","description":"PMC full-text record"},{"kind":"paper","uri":"https://doi.org/10.1016/j.jad.2006.03.015","description":"DOI"}],
+  "executable_tools": [],
+  "provenance": [{"source_type":"metadata","locator":"PubMed PMID 16697047 / PMCID PMC7112587"}],
+  "related_papers": [],
+  "metadata": {"record_status":"real_publication","source_level":"abstract_plus_open_fulltext_record","human_validation_status":"model_curated_not_expert_validated","doi":"10.1016/j.jad.2006.03.015","year":2006,"journal":"Journal of Affective Disorders","prevention_level":"universal","topic_tags":["media","celebrity suicide","population surveillance","responsible reporting"]}
+}
