@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "csrp-paper-skill-mvp"
-version = "0.2.0"
-description = "Paper-as-skill institutional evidence architecture with real-paper v0.2 demo"
+version = "0.3.0.dev0"
+description = "Provenance-preserving Paper-as-Skill architecture and evidence-family benchmark prototype"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
@@ -16,6 +16,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+
+[project.urls]
+Repository = "https://github.com/turboguan/csrp-paper-skills"
+Issues = "https://github.com/turboguan/csrp-paper-skills/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
