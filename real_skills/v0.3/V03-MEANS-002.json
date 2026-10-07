@@ -1,0 +1,57 @@
+{
+  "paper_id": "V03-MEANS-002",
+  "citation": "Chen YY, Chen F, Chang SS, Wong J, Yip PSF. Assessing the Efficacy of Restricting Access to Barbecue Charcoal for Suicide Prevention in Taiwan: A Community-Based Intervention Trial. PLoS ONE. 2015;10(8):e0133809. doi:10.1371/journal.pone.0133809.",
+  "title": "Assessing the Efficacy of Restricting Access to Barbecue Charcoal for Suicide Prevention in Taiwan: A Community-Based Intervention Trial",
+  "abstract": "Community-based quasi-experimental evaluation of a charcoal-restriction programme in New Taipei City compared with two control cities.",
+  "study_type": "quasi-experimental community intervention",
+  "population": ["residents of New Taipei City, Taipei City, and Kaohsiung City, Taiwan"],
+  "setting": ["New Taipei City, Taiwan", "major retail stores"],
+  "intervention_or_exposure": ["restricted retail access to barbecue charcoal"],
+  "comparator": ["two comparison cities without the charcoal-restriction programme"],
+  "outcomes": ["charcoal-burning suicide rate", "all-method suicide rate", "non-charcoal suicide rate"],
+  "effect_estimates": [
+    {"outcome":"charcoal-burning suicide rate","measure":"adjusted rate reduction after intervention","estimate":"30% reduction","lower_ci":14.0,"upper_ci":44.0,"unit":"percent"},
+    {"outcome":"charcoal-burning suicide rate","measure":"unadjusted pre/post estimated rate reduction","estimate":"37% reduction","lower_ci":17.0,"upper_ci":50.0,"unit":"percent"},
+    {"outcome":"all-method suicide rate","measure":"simulation estimate of lives saved during 20 months","estimate":"91","lower_ci":55.0,"upper_ci":128.0,"unit":"lives"}
+  ],
+  "uncertainty": [
+    "Quasi-experimental city-level design rather than random allocation.",
+    "Intervention effect estimates depend on secular-trend adjustment and comparison-city assumptions."
+  ],
+  "methods": ["quasi-experimental community intervention", "generalized linear regression with secular trends", "simulation of lives saved"],
+  "evidence_claims": [
+    {
+      "claim_id":"V03-MEANS-002-C01",
+      "statement":"After adjustment for secular trends, the New Taipei charcoal-restriction programme was associated with an estimated 30% reduction in charcoal-burning suicide compared with the pre-intervention period.",
+      "direction":"beneficial",
+      "population":"residents of New Taipei City, Taipei City, and Kaohsiung City, Taiwan",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"charcoal-burning suicide rate",
+      "method":"quasi-experimental community intervention",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"metadata","locator":"PubMed PMID 26305374, Abstract: Methods and Findings"}]
+    },
+    {
+      "claim_id":"V03-MEANS-002-C02",
+      "statement":"The study reported no compensatory increase in non-charcoal-burning suicide in New Taipei City during the intervention period.",
+      "direction":"null",
+      "population":"residents of New Taipei City, Taipei City, and Kaohsiung City, Taiwan",
+      "intervention_or_exposure":"restricted retail access to barbecue charcoal",
+      "outcome":"non-charcoal suicide rate",
+      "method":"quasi-experimental community intervention",
+      "causal_language_allowed":false,
+      "provenance":[{"source_type":"metadata","locator":"PubMed PMID 26305374, Abstract: Methods and Findings"}]
+    }
+  ],
+  "limitations":["City-level quasi-experimental design.","Short post-intervention evaluation window relative to later follow-up work."],
+  "applicability":["Population-level means-restriction policy in settings where charcoal burning is a common suicide method."],
+  "safety_boundaries":["Do not translate population suicide-rate changes into individual risk estimates.","Do not use this record to provide instructions about self-harm methods."],
+  "resources":[
+    {"kind":"paper","uri":"https://pubmed.ncbi.nlm.nih.gov/26305374/","description":"PubMed record and abstract"},
+    {"kind":"paper","uri":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4549118/","description":"Open full text"}
+  ],
+  "executable_tools":[],
+  "provenance":[{"source_type":"metadata","locator":"PubMed PMID 26305374"}],
+  "related_papers":["CSRP-REAL-004","V03-MEANS-003","V03-MEANS-004"],
+  "metadata":{"record_status":"real_publication_candidate","source_level":"open_full_text_available","human_validation_status":"model_curated_not_expert_validated","doi":"10.1371/journal.pone.0133809","year":2015,"journal":"PLoS ONE","prevention_level":"universal","topic_tags":["means restriction","charcoal burning","population intervention","Taiwan"]}
+}
