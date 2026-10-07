@@ -1,0 +1,5 @@
+pair_id,claim_a,claim_b,reviewer_a_label,reviewer_a_confidence,reviewer_a_rationale,reviewer_b_label,reviewer_b_confidence,reviewer_b_rationale,agreement_before_adjudication,adjudicated_label,adjudicator_id,adjudication_rationale,final_status
+"MEANS-P01","CSRP-REAL-004-C01","V03-MEANS-002-C01","","","","","","","","","","",""
+"MEANS-P02","V03-MEANS-002-C01","V03-MEANS-003-C01","","","","","","","","","","",""
+"MEANS-P03","CSRP-REAL-004-C01","V03-MEANS-003-C01","","","","","","","","","","",""
+"MEANS-P04","V03-MEANS-004-C01","V03-MEANS-002-C01","","","","","","","","","","",""

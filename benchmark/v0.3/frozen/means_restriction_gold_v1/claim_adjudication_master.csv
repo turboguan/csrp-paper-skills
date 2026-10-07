@@ -1,0 +1,10 @@
+claim_id,paper_id,reviewer_a_claim_verdict,reviewer_a_provenance_verdict,reviewer_a_comments,reviewer_b_claim_verdict,reviewer_b_provenance_verdict,reviewer_b_comments,agreement_before_adjudication,final_claim_verdict,final_claim_text,final_provenance_locator,adjudicator_id,adjudication_rationale,final_status
+"CSRP-REAL-004-C01","CSRP-REAL-004","","","","","","","","","","","","",""
+"CSRP-REAL-004-C02","CSRP-REAL-004","","","","","","","","","","","","",""
+"CSRP-REAL-004-C03","CSRP-REAL-004","","","","","","","","","","","","",""
+"V03-MEANS-002-C01","V03-MEANS-002","","","","","","","","","","","","",""
+"V03-MEANS-002-C02","V03-MEANS-002","","","","","","","","","","","","",""
+"V03-MEANS-003-C01","V03-MEANS-003","","","","","","","","","","","","",""
+"V03-MEANS-003-C02","V03-MEANS-003","","","","","","","","","","","","",""
+"V03-MEANS-004-C01","V03-MEANS-004","","","","","","","","","","","","",""
+"V03-MEANS-004-C02","V03-MEANS-004","","","","","","","","","","","","",""
