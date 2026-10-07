@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PaperSkill",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["paper_id","citation","title","study_type","population","evidence_claims"],
+  "properties": {
+    "paper_id": {"type":"string","minLength":1},
+    "citation": {"type":"string","minLength":1},
+    "title": {"type":"string","minLength":1},
+    "abstract": {"type":"string"},
+    "study_type": {"type":"string","minLength":1},
+    "population": {"type":"array","items":{"type":"string"}},
+    "setting": {"type":"array","items":{"type":"string"}},
+    "intervention_or_exposure": {"type":"array","items":{"type":"string"}},
+    "comparator": {"type":"array","items":{"type":"string"}},
+    "outcomes": {"type":"array","items":{"type":"string"}},
+    "effect_estimates": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["outcome"],
+        "properties":{
+          "outcome":{"type":"string"},
+          "measure":{"type":["string","null"]},
+          "estimate":{"type":["number","string","null"]},
+          "lower_ci":{"type":["number","null"]},
+          "upper_ci":{"type":["number","null"]},
+          "unit":{"type":["string","null"]}
+        }
+      }
+    },
+    "uncertainty": {"type":"array","items":{"type":"string"}},
+    "methods": {"type":"array","items":{"type":"string"}},
+    "evidence_claims": {
+      "type":"array",
+      "minItems":1,
+      "items":{
+        "type":"object",
+        "required":["claim_id","statement","provenance"],
+        "properties":{
+          "claim_id":{"type":"string"},
+          "statement":{"type":"string"},
+          "direction":{"enum":["beneficial","harmful","null","mixed","descriptive"]},
+          "population":{"type":["string","null"]},
+          "intervention_or_exposure":{"type":["string","null"]},
+          "outcome":{"type":["string","null"]},
+          "method":{"type":["string","null"]},
+          "causal_language_allowed":{"type":"boolean"},
+          "provenance":{
+            "type":"array",
+            "minItems":1,
+            "items":{"$ref":"#/$defs/provenance"}
+          }
+        }
+      }
+    },
+    "limitations": {"type":"array","items":{"type":"string"}},
+    "applicability": {"type":"array","items":{"type":"string"}},
+    "safety_boundaries": {"type":"array","items":{"type":"string"}},
+    "resources": {
+      "type":"array",
+      "items":{
+        "type":"object",
+        "required":["kind","uri"],
+        "properties":{
+          "kind":{"enum":["paper","supplement","dataset","code","table","figure","other"]},
+          "uri":{"type":"string"},
+          "description":{"type":["string","null"]}
+        }
+      }
+    },
+    "executable_tools": {"type":"array","items":{"type":"object"}},
+    "provenance": {"type":"array","items":{"$ref":"#/$defs/provenance"}},
+    "related_papers": {"type":"array","items":{"type":"string"}},
+    "metadata": {"type":"object","additionalProperties":true}
+  },
+  "$defs":{
+    "provenance":{
+      "type":"object",
+      "required":["source_type","locator"],
+      "properties":{
+        "source_type":{"enum":["page","table","figure","supplement","text_span","metadata"]},
+        "locator":{"type":"string"},
+        "source_span":{"type":["string","null"]}
+      }
+    }
+  }
+}

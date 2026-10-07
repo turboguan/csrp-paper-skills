@@ -5,7 +5,7 @@
 <p align="center">
   <a href="https://github.com/turboguan/csrp-paper-skills/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/turboguan/csrp-paper-skills/actions/workflows/ci.yml/badge.svg"></a>
   <img alt="Python" src="https://img.shields.io/badge/python-3.10%2B-3776AB">
-  <img alt="Version" src="https://img.shields.io/badge/version-0.2.0-2a7f78">
+  <img alt="Version" src="https://img.shields.io/badge/version-0.3.0--dev-2a7f78">
   <img alt="Status" src="https://img.shields.io/badge/status-research%20prototype-lightgrey">
 </p>
 
@@ -19,7 +19,7 @@ This repository is a runnable research prototype for testing a specific scientif
 
 **Should each scientific paper become an autonomous agent, or should papers become shared, callable evidence skills used by a small number of persistent reasoning agents?**
 
-The current v0.2 release implements the second design and validates the end-to-end information flow on both synthetic fixtures and five real CSRP-linked publications. It does **not** yet claim that Paper-as-Skill outperforms RAG, monolithic-agent, or one-paper-one-agent baselines.
+The current codebase contains the v0.2 end-to-end prototype plus the **v0.3 Evidence-Family Benchmark workstream**. v0.3 adds matched evidence families, claim-pair adjudication, benchmark queries and a runnable evaluation harness. It does **not** yet claim that Paper-as-Skill outperforms RAG, monolithic-agent, or one-paper-one-agent baselines.
 
 ## Architecture
 
@@ -124,6 +124,10 @@ See [V0.2_STATUS.md](V0.2_STATUS.md) for the exact boundary between implementati
 
 ## v0.3 — Evidence-Family Benchmark
 
+**Current development status:** the repository now includes a normal `src/`, `tests/`, `schemas/` and `benchmark/v0.3/` source tree; the embedded v0.2 ZIP is no longer required.
+
+The first implemented family is **means restriction / charcoal burning**, with four papers spanning short-term intervention evidence, long-term follow-up and regional epidemiological context. Candidate claim-pair relations remain non-gold until two-reviewer adjudication.
+
 The next milestone is a **10–15 paper, 2–3 family benchmark** built around matched scientific questions rather than simply adding more heterogeneous papers.
 
 Candidate families:
@@ -195,7 +199,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ## Project status
 
-**Research prototype — v0.2**
+**Research prototype — v0.3 development**
 
 The repository is being developed alongside a scientific manuscript on shared Paper Skills, institutional evidence graphs, and sparse persistent agency.
 

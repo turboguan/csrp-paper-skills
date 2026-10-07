@@ -1,0 +1,5 @@
+pair_id,claim_a,claim_b,reviewer_1_label,reviewer_1_rationale,reviewer_2_label,reviewer_2_rationale,adjudicated_label,adjudicator_id,adjudication_rationale,status
+MEANS-P01,CSRP-REAL-004-C01,V03-MEANS-002-C01,,,,,,,,candidate
+MEANS-P02,V03-MEANS-002-C01,V03-MEANS-003-C01,,,,,,,,candidate
+MEANS-P03,CSRP-REAL-004-C01,V03-MEANS-003-C01,,,,,,,,candidate
+MEANS-P04,V03-MEANS-004-C01,V03-MEANS-002-C01,,,,,,,,candidate
