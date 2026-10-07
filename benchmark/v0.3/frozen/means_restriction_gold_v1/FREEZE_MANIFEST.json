@@ -1,0 +1,33 @@
+{
+  "freeze_version": "means-gold-v1.0",
+  "freeze_type": "pre_gold_protocol_freeze",
+  "family_id": "means_restriction_charcoal",
+  "content_freeze_parent_commit": "3a92ce3c8b77f28cb0f4ce506e065a17d934a620",
+  "locked_files": [
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/README.md",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/corpus_manifest.json",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/CLAIM_PROVENANCE_CODEBOOK.md",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/RELATION_CODEBOOK_v1.md",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/ADJUDICATION_PROTOCOL_v1.md",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/STATISTICAL_ANALYSIS_PLAN_v1.md",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/analysis_config.json",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/reviewer_A_claim_provenance.csv",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/reviewer_B_claim_provenance.csv",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/reviewer_A_relations.csv",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/reviewer_B_relations.csv",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/claim_adjudication_master.csv",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/relation_adjudication_master.csv",
+    "benchmark/v0.3/frozen/means_restriction_gold_v1/FREEZE_POLICY.md"
+  ],
+  "frozen_scientific_units": {
+    "papers": 4,
+    "candidate_claims": 9,
+    "prespecified_relation_pairs": 4
+  },
+  "gold_status": "none_yet_human_annotation_pending",
+  "rules": {
+    "mutation_after_merge": "prohibited; create a new version directory",
+    "model_suggestions_visible_to_reviewers": false,
+    "confirmatory_inference_from_this_four_pair_pilot": false
+  }
+}
