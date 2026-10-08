@@ -12,6 +12,7 @@ from .models import PaperSkill
 from .registry import SkillRegistry
 from .router import QueryRouter, Route
 from .safety import SafetyAction, SafetyResult, SafetySupervisor
+from .support import EvidenceSupportGate
 
 
 @dataclass
@@ -39,6 +40,7 @@ class Orchestrator:
         self.router = QueryRouter()
         self.judge = EvidenceJudge()
         self.safety = SafetySupervisor()
+        self.support_gate = EvidenceSupportGate()
         self.agents = {role: DomainAgent(role) for role in ("Universal", "Selective", "Indicated")}
 
     def _target_population(self, query: str) -> str | None:
@@ -58,7 +60,11 @@ class Orchestrator:
         hits = self.registry.keyword_search(query, limit=12)
         if hits:
             return hits
-        return self.registry.all()[:5]
+        # Fail closed: an unsupported or irrelevant query must not receive
+        # arbitrary corpus evidence. The previous fallback to the first five
+        # registered skills could make the system appear to answer questions
+        # that the evidence family does not cover.
+        return []
 
     def run(self, query: str) -> OrchestratorResult:
         t0 = time.perf_counter()
@@ -81,6 +87,9 @@ class Orchestrator:
             )
 
         skills = self._retrieve(query)
+        support = self.support_gate.review(query, skills)
+        if not support.supported:
+            skills = []
         workspace = EvidenceWorkspace(query=query, skills=skills)
         draft = self.agents[route.agent].reason(workspace)
         target_population = self._target_population(query) if "generalized" in query.casefold() or "generalised" in query.casefold() else None

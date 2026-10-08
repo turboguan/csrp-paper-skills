@@ -1,0 +1,43 @@
+name: v0.3 sanity
+
+on:
+  push:
+    branches:
+      - test/means-sanity-v1
+  pull_request:
+    branches:
+      - benchmark/means-gold-v1-freeze
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package and tests
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+
+      - name: Run unit tests
+        run: pytest -q
+
+      - name: Run means sanity suite
+        run: python scripts/run_means_sanity.py
+
+      - name: Upload sanity report
+        uses: actions/upload-artifact@v4
+        with:
+          name: means-sanity-v1
+          path: |
+            outputs/local/means_sanity_v1.json
+            outputs/local/means_sanity_v1.md
