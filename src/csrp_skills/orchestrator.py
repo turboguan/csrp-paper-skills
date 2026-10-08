@@ -58,7 +58,11 @@ class Orchestrator:
         hits = self.registry.keyword_search(query, limit=12)
         if hits:
             return hits
-        return self.registry.all()[:5]
+        # Fail closed: an unsupported or irrelevant query must not receive
+        # arbitrary corpus evidence. The previous fallback to the first five
+        # registered skills could make the system appear to answer questions
+        # that the evidence family does not cover.
+        return []
 
     def run(self, query: str) -> OrchestratorResult:
         t0 = time.perf_counter()
