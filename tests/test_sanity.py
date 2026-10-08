@@ -67,3 +67,12 @@ def test_individual_risk_query_escalates_before_retrieval():
     assert result.safety.action.value == "escalate"
     assert result.selected_paper_ids == []
     assert result.provenance == {}
+
+
+def test_hard_negative_with_topic_overlap_does_not_return_wrong_outcome_evidence():
+    result = _means_system().run(
+        "Do the charcoal-restriction studies show that the intervention improves depression symptoms?"
+    )
+    assert result.selected_paper_ids == []
+    assert result.provenance == {}
+    assert "No relevant validated claims were retrieved." in result.answer
