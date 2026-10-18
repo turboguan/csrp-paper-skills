@@ -21,10 +21,13 @@ from csrp_skills.runtime import MatchedBudget
 
 
 def load_adapter() -> LLMAdapter:
-    target = os.environ.get("CSRP_ADAPTER_FACTORY", "")
-    if not target or ":" not in target:
+    target = os.environ.get(
+        "CSRP_ADAPTER_FACTORY",
+        "csrp_skills.providers.openai_responses:create_frozen_means_pilot_adapter",
+    )
+    if ":" not in target:
         raise RuntimeError(
-            "Set CSRP_ADAPTER_FACTORY='package.module:function'. The function must return one fixed LLMAdapter instance."
+            "CSRP_ADAPTER_FACTORY must use 'package.module:function' syntax."
         )
     module_name, function_name = target.split(":", 1)
     factory = getattr(importlib.import_module(module_name), function_name)
