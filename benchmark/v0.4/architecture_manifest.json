@@ -1,0 +1,69 @@
+{
+  "version": "v0.4-organizational-designs",
+  "status": "architecture_scaffold_pre_llm_benchmark",
+  "research_question": "How does organizational design shape collective reasoning and decision quality in AI co-scientists?",
+  "architectures": [
+    {
+      "id": "functional_multi_agent",
+      "label": "Functional Multi-Agent Organization",
+      "unit_of_agency": "task-specialized role",
+      "paper_representation": "shared evidence corpus / shared Paper Skills",
+      "coordination": "FacilitatorAgent coordinates Perspective, Predict, Strategy, External and Decision agents",
+      "context_structure": "shared evidence context",
+      "management_theory_mapping": [
+        "Organizational Information Processing Theory",
+        "functional differentiation",
+        "Contingency Theory"
+      ],
+      "scientific_hypothesis": "May perform well when tasks can be decomposed into differentiated information-processing roles."
+    },
+    {
+      "id": "paper_agent_committee",
+      "label": "Paper-Agent Committee",
+      "unit_of_agency": "paper",
+      "paper_representation": "one isolated PaperAgent per retrieved paper",
+      "coordination": "CommitteeChair aggregates and later facilitates deliberation among PaperAgents",
+      "context_structure": "paper-level private contexts plus chair aggregation",
+      "management_theory_mapping": [
+        "Transactive Memory Systems",
+        "group decision making",
+        "information aggregation",
+        "Contingency Theory"
+      ],
+      "scientific_hypothesis": "May preserve heterogeneous paper-level viewpoints but incur coordination cost as evidence load increases."
+    },
+    {
+      "id": "shared_knowledge_umbrella",
+      "label": "Shared-Knowledge Umbrella Organization",
+      "unit_of_agency": "institutional reasoning process",
+      "paper_representation": "papers as shared callable skills",
+      "coordination": "Institutional Orchestrator plus Evidence Judge and Safety Supervisor",
+      "context_structure": "shared multi-paper workspace",
+      "management_theory_mapping": [
+        "Knowledge-Based View",
+        "Organizational Information Processing Theory",
+        "modular organization",
+        "Contingency Theory"
+      ],
+      "scientific_hypothesis": "May reduce coordination overhead and preserve cross-paper links on high-interdependence evidence-synthesis tasks."
+    }
+  ],
+  "cross_architecture_rule": "Use the same corpus, retrieval policy, base model, evidence budget, output budget and benchmark questions; vary organizational structure only.",
+  "candidate_moderators": [
+    "task interdependence",
+    "task uncertainty",
+    "evidence load",
+    "evidence heterogeneity"
+  ],
+  "candidate_outcomes": [
+    "decision quality",
+    "cross-paper relation accuracy",
+    "evidence coverage",
+    "citation/provenance fidelity",
+    "unsupported-answer rate",
+    "conflict resolution",
+    "coordination-message burden",
+    "token cost",
+    "latency"
+  ]
+}
