@@ -37,6 +37,7 @@ class LLMAdapter(ABC):
     """
 
     model_id: str
+    token_count_is_exact: bool = True
 
     @abstractmethod
     def count_tokens(self, messages: Sequence[LLMMessage]) -> int:

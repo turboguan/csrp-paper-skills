@@ -16,6 +16,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+openai = ["openai>=2.0", "tiktoken>=0.9"]
 
 [project.urls]
 Repository = "https://github.com/turboguan/csrp-paper-skills"

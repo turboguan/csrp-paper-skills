@@ -21,10 +21,13 @@ from csrp_skills.runtime import MatchedBudget
 
 
 def load_adapter() -> LLMAdapter:
-    target = os.environ.get("CSRP_ADAPTER_FACTORY", "")
-    if not target or ":" not in target:
+    target = os.environ.get(
+        "CSRP_ADAPTER_FACTORY",
+        "csrp_skills.providers.openai_responses:create_frozen_means_pilot_adapter",
+    )
+    if ":" not in target:
         raise RuntimeError(
-            "Set CSRP_ADAPTER_FACTORY='package.module:function'. The function must return one fixed LLMAdapter instance."
+            "CSRP_ADAPTER_FACTORY must use 'package.module:function' syntax."
         )
     module_name, function_name = target.split(":", 1)
     factory = getattr(importlib.import_module(module_name), function_name)
@@ -88,10 +91,54 @@ def main() -> None:
     scores = []
     review_rows = []
 
+    out_dir = root / "outputs" / "pilot"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    raw_path = out_dir / "means_pilot_v1_raw.json"
+    score_path = out_dir / "means_pilot_v1_automated_scores.json"
+    review_path = out_dir / "means_pilot_v1_human_review.csv"
+    progress_path = out_dir / "means_pilot_v1_progress.json"
+
+    def checkpoint(status: str, current: dict | None = None) -> None:
+        raw_path.write_text(json.dumps({
+            "pilot_id": suite.pilot_id,
+            "model_id": adapter.model_id,
+            "replicates": suite.replicates_per_architecture_query,
+            "status": status,
+            "results": raw,
+        }, indent=2), encoding="utf-8")
+        score_path.write_text(json.dumps(scores, indent=2), encoding="utf-8")
+        fieldnames = list(review_rows[0]) if review_rows else [
+            "query_id", "replicate", "architecture", "complexity",
+            "task_interdependence", "task_uncertainty",
+            "evidence_correctness_1_5", "cross_paper_synthesis_1_5",
+            "uncertainty_handling_1_5", "relation_reasoning_1_5",
+            "decision_quality_1_5", "unsupported_claim_present_yes_no",
+            "reviewer_notes",
+        ]
+        with review_path.open("w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            if review_rows:
+                writer.writerows(review_rows)
+        progress_path.write_text(json.dumps({
+            "status": status,
+            "completed_query_replicates": len(raw),
+            "completed_architecture_cells": len(scores),
+            "current": current,
+        }, indent=2), encoding="utf-8")
+
+    checkpoint("starting")
+
     for replicate in range(1, suite.replicates_per_architecture_query + 1):
         for question in suite.questions:
-            result = runner.run_query(question.query)
-            raw.append({"replicate": replicate, **asdict(result)})
+            current = {"replicate": replicate, "query_id": question.query_id}
+            checkpoint("running", current)
+            try:
+                result = runner.run_query(question.query)
+            except Exception as exc:
+                checkpoint("failed", {**current, "error_type": type(exc).__name__, "error": str(exc)})
+                raise
+            raw.append({"replicate": replicate, "query_id": question.query_id, **asdict(result)})
             for record in result.records:
                 score = score_pilot_record(question, record, valid_claim_ids).to_dict()
                 score["replicate"] = replicate
@@ -112,30 +159,14 @@ def main() -> None:
                         "unsupported_claim_present_yes_no": "",
                         "reviewer_notes": "",
                     })
+            checkpoint("running", current)
 
-    out_dir = root / "outputs" / "pilot"
-    out_dir.mkdir(parents=True, exist_ok=True)
-    raw_path = out_dir / "means_pilot_v1_raw.json"
-    score_path = out_dir / "means_pilot_v1_automated_scores.json"
-    review_path = out_dir / "means_pilot_v1_human_review.csv"
-    raw_path.write_text(json.dumps({
-        "pilot_id": suite.pilot_id,
-        "model_id": adapter.model_id,
-        "replicates": suite.replicates_per_architecture_query,
-        "results": raw,
-    }, indent=2), encoding="utf-8")
-    score_path.write_text(json.dumps(scores, indent=2), encoding="utf-8")
-
-    fieldnames = list(review_rows[0]) if review_rows else []
-    with review_path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        if fieldnames:
-            writer.writeheader()
-            writer.writerows(review_rows)
+    checkpoint("completed")
 
     print(raw_path)
     print(score_path)
     print(review_path)
+    print(progress_path)
     print("model:", adapter.model_id)
     print("architecture-query-replicate cells:", len(scores))
 

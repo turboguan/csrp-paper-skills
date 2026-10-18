@@ -1,7 +1,7 @@
 {
   "version": "matched-experiment-v0.5",
-  "status": "pre_benchmark_scaffold",
-  "model_id": "SET_ONE_FIXED_MODEL_ID_BEFORE_EXPERIMENT",
+  "status": "frozen_for_means_pilot_v1",
+  "model_id": "gpt-6.1-sol",
   "retriever_id": "weighted_keyword_v03_plus_support_gate_v1",
   "evidence_budget_papers": 4,
   "token_budget": {
@@ -9,7 +9,7 @@
     "max_output_tokens_per_call": 700,
     "max_llm_calls": 8,
     "temperature": 0,
-    "seed": 42
+    "seed": null
   },
   "fairness_rules": [
     "Retrieve exactly once per query and reuse the identical EvidencePacket across all architectures.",
@@ -24,5 +24,16 @@
     "functional_multi_agent",
     "paper_agent_committee",
     "shared_knowledge_umbrella"
+  ],
+  "provider": "openai",
+  "api": "responses",
+  "model_freeze_date": "2026-10-18",
+  "service_tier": "default",
+  "reproducibility_notes": [
+    "Model identifier frozen to gpt-6.1-sol for Means Restriction Pilot v1.",
+    "Use OpenAI Responses API with service_tier=default and store=false.",
+    "Provider-reported input/output token usage is authoritative.",
+    "The provider model identifier returned by every response must match the frozen model identifier.",
+    "If a dated snapshot identifier becomes available before the first paid run, create a new config version rather than silently changing this freeze."
   ]
 }
