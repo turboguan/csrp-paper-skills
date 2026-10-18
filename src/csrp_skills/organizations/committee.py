@@ -96,7 +96,7 @@ class PaperAgentCommittee(BaseEvidenceOrganization):
 
         skills = list(packet.skills)
         if not skills:
-            return self.no_evidence_result(packet.query)
+            return self.matched_no_evidence_result(packet, runtime)
 
         transcript = [
             OrganizationMessage(
