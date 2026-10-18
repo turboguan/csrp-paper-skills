@@ -130,3 +130,86 @@ class FunctionalMultiAgentOrganization(BaseEvidenceOrganization):
                 "llm_calls": 0,
             },
         )
+
+
+    def run_matched(self, packet, runtime) -> OrganizationResult:
+        """Run the functional organization on a pre-retrieved matched evidence packet."""
+        from ..evidence_format import claims_by_id, extract_claim_ids, render_evidence
+        from ..llm import LLMMessage
+
+        skills = list(packet.skills)
+        if not skills:
+            return self.matched_no_evidence_result(packet, runtime)
+
+        evidence = render_evidence(skills)
+        transcript = [
+            OrganizationMessage(
+                actor="FacilitatorAgent",
+                role="facilitator",
+                content="Dispatches the identical matched EvidencePacket to four specialist roles.",
+                paper_ids=packet.paper_ids,
+            )
+        ]
+
+        role_prompts = {
+            "PerspectiveAgent": "Identify distinct populations, study perspectives, methods and important heterogeneity. Do not invent evidence.",
+            "PredictAgent": "Assess what the observed evidence can and cannot support about expected outcomes. Do not extrapolate beyond the supplied evidence.",
+            "StrategyAgent": "Identify strategy-relevant implications, limitations and applicability conditions from the supplied evidence.",
+            "ExternalAgent": "Assess external context, setting differences and transferability limits in the supplied evidence.",
+        }
+        specialist_outputs = []
+        for role, instruction in role_prompts.items():
+            response = runtime.generate([
+                LLMMessage(role="system", content="You are a task-specialized member of an evidence-review organization. Cite claim IDs in square brackets for every evidence-based assertion."),
+                LLMMessage(role="user", content=f"QUERY:\n{packet.query}\n\nROLE:\n{instruction}\n\nEVIDENCE:\n{evidence}"),
+            ])
+            specialist_outputs.append((role, response.text))
+            transcript.append(
+                OrganizationMessage(
+                    actor=role,
+                    role=role.removesuffix("Agent").casefold(),
+                    content=response.text,
+                    paper_ids=packet.paper_ids,
+                    claim_ids=extract_claim_ids(response.text),
+                )
+            )
+
+        specialist_text = "\n\n".join(f"{role}:\n{text}" for role, text in specialist_outputs)
+        final = runtime.generate([
+            LLMMessage(role="system", content="You are the DecisionAgent. Integrate the specialist reports into one evidence-grounded answer. Resolve disagreement explicitly. Cite only claim IDs present in the supplied evidence."),
+            LLMMessage(role="user", content=f"QUERY:\n{packet.query}\n\nEVIDENCE:\n{evidence}\n\nSPECIALIST REPORTS:\n{specialist_text}"),
+        ])
+        final_ids = extract_claim_ids(final.text)
+        claim_map = claims_by_id(skills)
+        used_claims = [claim_map[cid] for cid in final_ids if cid in claim_map]
+        transcript.append(
+            OrganizationMessage(
+                actor="DecisionAgent",
+                role="decision",
+                content=final.text,
+                paper_ids=packet.paper_ids,
+                claim_ids=final_ids,
+            )
+        )
+
+        metrics = runtime.metrics()
+        metrics.update({
+            "evidence_count": len(skills),
+            "claim_count": sum(len(skill.evidence_claims) for skill in skills),
+            "persistent_agents": 6,
+            "paper_agents": 0,
+            "shared_evidence_context": True,
+            "coordination_messages": len(transcript),
+            "retriever_id": packet.retriever_id,
+            "evidence_budget": packet.evidence_budget,
+        })
+        return OrganizationResult(
+            architecture=self.architecture_name,
+            query=packet.query,
+            answer=final.text,
+            selected_paper_ids=packet.paper_ids,
+            provenance=self.provenance_for_claims(used_claims),
+            transcript=transcript,
+            metrics=metrics,
+            experimental_status="matched_llm_scaffold",
+        )
