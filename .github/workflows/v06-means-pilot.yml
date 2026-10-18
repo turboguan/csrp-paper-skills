@@ -1,0 +1,35 @@
+name: v0.6 means pilot dry run
+
+on:
+  push:
+    branches:
+      - research/v0.6-means-pilot
+  pull_request:
+    branches:
+      - research/v0.5-matched-llm-adapter
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pilot-dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install package and tests
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+      - name: Run unit tests
+        run: pytest -q
+      - name: Run 18-question deterministic pipeline check
+        run: python scripts/v06_means_pilot_dry_run.py
+      - name: Upload pipeline-check output
+        uses: actions/upload-artifact@v4
+        with:
+          name: v06-means-pilot-dry-run
+          path: outputs/local/v06_means_pilot_dry_run.json
