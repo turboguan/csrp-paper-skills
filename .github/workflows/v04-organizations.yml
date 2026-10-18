@@ -1,0 +1,41 @@
+name: v0.4 organizational designs
+
+on:
+  push:
+    branches:
+      - research/v0.4-organizational-designs
+  pull_request:
+    branches:
+      - test/means-sanity-v1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-organizations:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install package and tests
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev]'
+
+      - name: Run unit tests
+        run: pytest -q
+
+      - name: Run three-architecture dry run
+        run: python scripts/v04_organization_dry_run.py
+
+      - name: Upload architecture dry-run output
+        uses: actions/upload-artifact@v4
+        with:
+          name: v04-organizational-designs
+          path: outputs/local/v04_organizational_designs_dry_run.json
