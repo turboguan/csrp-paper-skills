@@ -94,3 +94,30 @@ class BaseEvidenceOrganization:
                 "llm_calls": 0,
             },
         )
+
+
+    def matched_no_evidence_result(self, packet, runtime) -> OrganizationResult:
+        metrics = runtime.metrics()
+        metrics.update({
+            "evidence_count": 0,
+            "claim_count": 0,
+            "coordination_messages": 1,
+            "retriever_id": packet.retriever_id,
+            "evidence_budget": packet.evidence_budget,
+        })
+        return OrganizationResult(
+            architecture=self.architecture_name,
+            query=packet.query,
+            answer="No relevant validated claims were retrieved.",
+            selected_paper_ids=[],
+            provenance={},
+            transcript=[
+                OrganizationMessage(
+                    actor="EvidenceGate",
+                    role="evidence_sufficiency",
+                    content="No supported evidence was retrieved; the organization failed closed.",
+                )
+            ],
+            metrics=metrics,
+            experimental_status="matched_llm_scaffold",
+        )
