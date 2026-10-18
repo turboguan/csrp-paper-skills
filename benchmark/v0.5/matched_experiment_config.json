@@ -1,0 +1,28 @@
+{
+  "version": "matched-experiment-v0.5",
+  "status": "pre_benchmark_scaffold",
+  "model_id": "SET_ONE_FIXED_MODEL_ID_BEFORE_EXPERIMENT",
+  "retriever_id": "weighted_keyword_v03_plus_support_gate_v1",
+  "evidence_budget_papers": 4,
+  "token_budget": {
+    "max_total_tokens": 16000,
+    "max_output_tokens_per_call": 700,
+    "max_llm_calls": 8,
+    "temperature": 0,
+    "seed": 42
+  },
+  "fairness_rules": [
+    "Retrieve exactly once per query and reuse the identical EvidencePacket across all architectures.",
+    "Inject the same LLMAdapter instance and fixed model/version into all architectures.",
+    "Initialize the same total token budget for each architecture-query cell.",
+    "Keep evidence-paper budget fixed across architectures.",
+    "Do not silently retry only one architecture.",
+    "Record provider-reported token usage when a real adapter is connected.",
+    "Architecture-specific coordination may change the number of calls; total token ceiling remains matched and call count is an outcome."
+  ],
+  "architectures": [
+    "functional_multi_agent",
+    "paper_agent_committee",
+    "shared_knowledge_umbrella"
+  ]
+}
