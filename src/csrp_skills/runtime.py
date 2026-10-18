@@ -42,16 +42,21 @@ class LLMRuntime:
         if self.usage.llm_calls >= self.budget.max_llm_calls:
             raise BudgetExceeded("LLM-call budget exhausted")
 
-        input_tokens = self.adapter.count_tokens(messages)
+        estimated_input_tokens = self.adapter.count_tokens(messages)
         remaining = self.budget.max_total_tokens - self.usage.total_tokens
-        if input_tokens >= remaining:
+        # Real provider APIs may count protocol/message overhead differently from
+        # local tokenizers. Reserve a small common margin when the adapter marks
+        # preflight counts as estimates; provider-reported usage remains authoritative.
+        reserve = 0 if self.adapter.token_count_is_exact else 256
+        if estimated_input_tokens + reserve >= remaining:
             raise BudgetExceeded(
-                f"input would exceed total token budget: input={input_tokens}, remaining={remaining}"
+                "input would exceed total token budget: "
+                f"estimated_input={estimated_input_tokens}, reserve={reserve}, remaining={remaining}"
             )
 
         max_output = min(
             self.budget.max_output_tokens_per_call,
-            remaining - input_tokens,
+            remaining - estimated_input_tokens - reserve,
         )
         if max_output <= 0:
             raise BudgetExceeded("no output-token budget remains")
@@ -65,7 +70,7 @@ class LLMRuntime:
 
         if response.model_id != self.adapter.model_id:
             raise ValueError("adapter returned a response from a different model_id")
-        if response.usage.input_tokens != input_tokens:
+        if self.adapter.token_count_is_exact and response.usage.input_tokens != estimated_input_tokens:
             raise ValueError(
                 "adapter token accounting mismatch: count_tokens and response usage disagree"
             )
