@@ -1,0 +1,343 @@
+{
+  "pilot_id": "means_restriction_pilot_v1",
+  "status": "pre_registered_small_scale_pilot_not_gold",
+  "corpus_paper_ids": [
+    "CSRP-REAL-004",
+    "V03-MEANS-002",
+    "V03-MEANS-003",
+    "V03-MEANS-004"
+  ],
+  "purpose": "Compare three organizational architectures on matched evidence under low, medium, high and adversarial task demands.",
+  "replicates_per_architecture_query": 3,
+  "scientific_boundary": "Automated retrieval/provenance/hallucination metrics may be scored immediately. Cross-paper relation correctness and decision quality require human review; no model-suggested relation label is treated as Gold.",
+  "questions": [
+    {
+      "query_id": "PILOT-L01",
+      "complexity": "low",
+      "task_interdependence": 1,
+      "task_uncertainty": 1,
+      "task_type": "single_paper_factual",
+      "query": "In the Hong Kong charcoal-restriction study, what happened to the charcoal-burning suicide rate in Tuen Mun during the 12-month intervention?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01"
+      ],
+      "human_review_required": false
+    },
+    {
+      "query_id": "PILOT-L02",
+      "complexity": "low",
+      "task_interdependence": 1,
+      "task_uncertainty": 1,
+      "task_type": "single_paper_factual",
+      "query": "What did the Hong Kong study report for the all-method suicide rate in Tuen Mun during the intervention period?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C02"
+      ],
+      "human_review_required": false
+    },
+    {
+      "query_id": "PILOT-L03",
+      "complexity": "low",
+      "task_interdependence": 1,
+      "task_uncertainty": 1,
+      "task_type": "single_paper_factual",
+      "query": "Did the Hong Kong charcoal-restriction study find clear evidence of substitution to non-charcoal suicide methods?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C03"
+      ],
+      "human_review_required": false
+    },
+    {
+      "query_id": "PILOT-L04",
+      "complexity": "low",
+      "task_interdependence": 1,
+      "task_uncertainty": 1,
+      "task_type": "single_paper_factual",
+      "query": "What did the 2015 New Taipei study report after adjustment for secular trends?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-002"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-002-C01"
+      ],
+      "human_review_required": false
+    },
+    {
+      "query_id": "PILOT-L05",
+      "complexity": "low",
+      "task_interdependence": 1,
+      "task_uncertainty": 1,
+      "task_type": "single_paper_factual",
+      "query": "What limitations did the 2021 long-term New Taipei study highlight about programme coverage and enforcement?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-003"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-003-C02"
+      ],
+      "human_review_required": false
+    },
+    {
+      "query_id": "PILOT-M01",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 2,
+      "task_type": "two_paper_comparison",
+      "query": "Compare the short-term charcoal-burning suicide findings from the Hong Kong study and the 2015 New Taipei study.",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-M02",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 2,
+      "task_type": "two_paper_secondary_outcome",
+      "query": "What did the Hong Kong and 2015 New Taipei studies report about possible substitution to other suicide methods?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C03",
+        "V03-MEANS-002-C02"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-M03",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 3,
+      "task_type": "short_vs_long_followup",
+      "query": "Compare the 2015 short-term and 2021 long-term New Taipei findings on the charcoal-restriction programme.",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-002",
+        "V03-MEANS-003"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-M04",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 3,
+      "task_type": "method_and_implementation_reasoning",
+      "query": "Which differences in follow-up, implementation coverage, enforcement and analytic design matter when comparing the 2015 and 2021 New Taipei studies?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-002",
+        "V03-MEANS-003"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-003-C02"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-M05",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 2,
+      "task_type": "evidence_type_boundary",
+      "query": "How should the regional East and Southeast Asia time-trend study be distinguished from direct intervention evidence from New Taipei?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-004",
+        "V03-MEANS-002"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-004-C01",
+        "V03-MEANS-002-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-M06",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 2,
+      "task_type": "outcome_scope",
+      "query": "Across the Hong Kong and New Taipei intervention studies, what evidence concerns charcoal-burning suicide specifically and what evidence concerns broader all-method outcomes?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "CSRP-REAL-004-C02",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-H01",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "task_type": "multi_paper_synthesis",
+      "query": "What evidence supports or limits the effectiveness of restricting retail access to barbecue charcoal as a population suicide-prevention strategy?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003",
+        "V03-MEANS-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-004-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-H02",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "task_type": "generalization_boundary",
+      "query": "Do these four studies justify the conclusion that retail charcoal restriction is effective in every setting and remains effective over the long term?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003",
+        "V03-MEANS-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-003-C02",
+        "V03-MEANS-004-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-H03",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "task_type": "implementation_contingency",
+      "query": "What do these studies suggest about the role of implementation strength, coverage and follow-up duration when evaluating charcoal-access restriction?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-003-C02"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-H04",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "task_type": "decision_memo",
+      "query": "Prepare a concise evidence memo for a policymaker considering retail charcoal-access restriction, including supporting evidence, limiting evidence, uncertainty and transferability.",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003",
+        "V03-MEANS-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-003-C02",
+        "V03-MEANS-004-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-H05",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "task_type": "causal_and_evidence_weighting",
+      "query": "Which findings in this four-paper corpus are direct intervention evidence and which are contextual observational evidence, and how should that affect the strength of any policy conclusion?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003",
+        "V03-MEANS-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-004-C01",
+        "V03-MEANS-004-C02"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "PILOT-A01",
+      "complexity": "adversarial",
+      "task_interdependence": 0,
+      "task_uncertainty": 2,
+      "task_type": "unsupported_outcome_hard_negative",
+      "query": "Do these charcoal-restriction studies show that the intervention improves depression symptoms?",
+      "expected_mode": "no_evidence",
+      "required_paper_ids": [],
+      "required_claim_ids": [],
+      "human_review_required": false
+    },
+    {
+      "query_id": "PILOT-A02",
+      "complexity": "adversarial",
+      "task_interdependence": 0,
+      "task_uncertainty": 2,
+      "task_type": "unsupported_intervention",
+      "query": "Do these four papers show that antidepressant medication reduces suicide?",
+      "expected_mode": "no_evidence",
+      "required_paper_ids": [],
+      "required_claim_ids": [],
+      "human_review_required": false
+    }
+  ]
+}
