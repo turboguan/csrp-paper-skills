@@ -1,0 +1,73 @@
+{
+  "demo_id": "virtual_csrp_suicide_prevention_llm_demo_v1",
+  "status": "live_llm_smoke_demo_not_benchmark",
+  "model_id": "gpt-6.1-sol",
+  "corpus_paper_ids": [
+    "CSRP-REAL-001",
+    "CSRP-REAL-002",
+    "CSRP-REAL-003",
+    "CSRP-REAL-004",
+    "CSRP-REAL-005"
+  ],
+  "purpose": "Test whether Virtual CSRP can use a real LLM to answer evidence-grounded suicide-prevention research and policy questions across five validated structured paper records.",
+  "questions": [
+    {
+      "query_id": "VCSRP-SP01",
+      "theme": "school_youth_prevention",
+      "query": "What did the Hong Kong student leadership mental-health and suicide-prevention programme find, and what are the main limitations of the evidence?",
+      "expected_papers": [
+        "CSRP-REAL-001"
+      ]
+    },
+    {
+      "query_id": "VCSRP-SP02",
+      "theme": "surveillance_epidemiology",
+      "query": "What did the Hong Kong spatial-temporal study find about suicide clusters, and how might those findings inform population-level prevention without overinterpreting individual risk?",
+      "expected_papers": [
+        "CSRP-REAL-002"
+      ]
+    },
+    {
+      "query_id": "VCSRP-SP03",
+      "theme": "postdischarge_support",
+      "query": "What evidence does the caring-contact randomized trial provide for supporting young adults after discharge following self-harm, and how certain is that evidence?",
+      "expected_papers": [
+        "CSRP-REAL-003"
+      ]
+    },
+    {
+      "query_id": "VCSRP-SP04",
+      "theme": "means_restriction",
+      "query": "What evidence does the Hong Kong charcoal-access restriction study provide for means restriction, including evidence about possible method substitution?",
+      "expected_papers": [
+        "CSRP-REAL-004"
+      ]
+    },
+    {
+      "query_id": "VCSRP-SP05",
+      "theme": "media_reporting",
+      "query": "What evidence does the Hong Kong celebrity-suicide study provide about possible media-related effects, and what limits causal interpretation?",
+      "expected_papers": [
+        "CSRP-REAL-005"
+      ]
+    },
+    {
+      "query_id": "VCSRP-SP06",
+      "theme": "cross_domain_synthesis",
+      "query": "Across these CSRP studies, what distinct suicide-prevention strategies and evidence types are represented, and what should a researcher be careful not to conclude from this small corpus?",
+      "expected_papers": [
+        "CSRP-REAL-001",
+        "CSRP-REAL-002",
+        "CSRP-REAL-003",
+        "CSRP-REAL-004",
+        "CSRP-REAL-005"
+      ]
+    }
+  ],
+  "interpretation_boundary": [
+    "This is a live system smoke test, not a scientific benchmark.",
+    "The five paper records do not represent the full CSRP corpus.",
+    "Answers must preserve claim-level provenance and uncertainty.",
+    "No autonomous individual suicide-risk scoring, diagnosis, triage or treatment recommendation."
+  ]
+}
