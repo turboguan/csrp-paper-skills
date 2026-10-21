@@ -43,3 +43,8 @@ def test_flagship_has_same_model_and_token_controls():
     assert controls["evidence_budget_papers"] == 4
     assert controls["max_total_tokens_per_architecture"] == 16000
     assert controls["temperature"] == 0.0
+
+
+def test_flagship_requires_exact_four_paper_evidence_packet():
+    data = json.loads(CFG.read_text(encoding="utf-8"))
+    assert data["matched_controls"]["required_evidence_packet_ids"] == data["corpus_paper_ids"]
