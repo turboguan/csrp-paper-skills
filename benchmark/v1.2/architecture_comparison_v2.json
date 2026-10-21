@@ -1,0 +1,46 @@
+{
+  "comparison_id": "virtual_csrp_three_architectures_v2",
+  "status": "active_pre_pilot_comparison_set",
+  "supersedes": "virtual_csrp_three_architectures_v1",
+  "rationale": "Replace the Paper-Agent Committee with Minimal Virtual CSRP while retaining Architecture A and C. The old committee architecture remains in repository history but is no longer part of the active three-way comparison.",
+  "architectures": [
+    {
+      "id": "functional_multi_agent",
+      "label": "Architecture 1 — Functional Virtual Institute",
+      "structure": "Horizontal functional specialization",
+      "persistent_agents": 6,
+      "matched_llm_calls_when_evidence_present": 5,
+      "description": "Facilitator coordinates Perspective, Predict, Strategy, External and Decision roles over the same evidence packet."
+    },
+    {
+      "id": "minimal_virtual_csrp",
+      "label": "Architecture 2 — Minimal Virtual CSRP",
+      "structure": "Sequential process specialization",
+      "persistent_agents_available": 4,
+      "typical_active_agents_for_evidence_synthesis": 3,
+      "matched_llm_calls_for_evidence_synthesis": 3,
+      "description": "Research Coordinator → Evidence & Data → optional Analysis & Methods → Synthesis & Decision, with shared institutional memory and a non-agent Quality & Safety Gate."
+    },
+    {
+      "id": "shared_knowledge_umbrella",
+      "label": "Architecture 3 — Shared-Knowledge Umbrella",
+      "structure": "Centralized shared-knowledge reasoning",
+      "persistent_agents": 1,
+      "matched_llm_calls_when_evidence_present": 1,
+      "description": "One institutional reasoning agent works directly over the shared evidence workspace; papers remain Paper Skills rather than agents."
+    }
+  ],
+  "common_controls": [
+    "same corpus",
+    "same query",
+    "same retriever",
+    "same EvidencePacket",
+    "same evidence budget",
+    "same base LLM/model version",
+    "same decoding settings",
+    "same total token ceiling",
+    "same safety boundary"
+  ],
+  "main_contrast": "Compare three levels/forms of organizational specialization: horizontal role specialization vs sequential process specialization vs centralized shared-knowledge reasoning.",
+  "historical_note": "Paper-Agent Committee remains implemented for archival and later ablation use but is removed from the active three-architecture pre-pilot."
+}

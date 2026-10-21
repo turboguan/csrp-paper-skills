@@ -1,0 +1,56 @@
+{
+  "architecture_id": "minimal_virtual_csrp_v1",
+  "status": "recommended_operating_architecture_pre_real_llm_validation",
+  "design_principle": "Create an autonomous agent only for a distinct information-processing function.",
+  "core_agents": [
+    {
+      "id": "research_coordinator",
+      "name": "Research Coordinator Agent",
+      "always_active": true
+    },
+    {
+      "id": "evidence_data",
+      "name": "Evidence & Data Agent",
+      "always_active": true
+    },
+    {
+      "id": "analysis_methods",
+      "name": "Analysis & Methods Agent",
+      "always_active": false
+    },
+    {
+      "id": "synthesis_decision",
+      "name": "Synthesis & Decision Agent",
+      "always_active": true
+    }
+  ],
+  "non_agent_infrastructure": {
+    "shared_memory": [
+      "Paper Skills",
+      "Evidence Graph",
+      "Provenance Registry",
+      "Datasets and analysis artifacts",
+      "Prior research outputs"
+    ],
+    "validation_layer": "Quality & Safety Gate"
+  },
+  "typical_active_agent_count": {
+    "literature_synthesis": 3,
+    "data_analysis": 4
+  },
+  "removed_from_default_architecture": [
+    "Director / PI Agent",
+    "Chief of Staff / Query Router",
+    "five department-style agent units",
+    "standalone Evidence Judge persona",
+    "standalone Safety Supervisor persona"
+  ],
+  "output_modes": [
+    "research",
+    "report",
+    "manuscript",
+    "policy"
+  ],
+  "future_research_question": "What is the minimum organizational complexity required for effective institutional intelligence?",
+  "safety_boundary": "Population-level research and policy support only; no autonomous individual suicide-risk scoring, diagnosis, triage or treatment selection."
+}
