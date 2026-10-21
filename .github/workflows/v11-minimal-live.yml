@@ -1,0 +1,44 @@
+name: v1.1 minimal Virtual CSRP live flagship
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_paid_run:
+        description: "I understand this workflow makes paid external LLM calls"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  live-minimal-flagship:
+    if: ${{ inputs.confirm_paid_run }}
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      CSRP_REAL_LLM_CONFIRM: "1"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev,openai]'
+      - name: Run tests before paid calls
+        run: pytest -q
+      - name: Verify credential/model access
+        run: python scripts/v07_openai_smoke.py
+      - name: Run minimal Virtual CSRP flagship case
+        run: python scripts/v11_minimal_virtual_csrp_real.py
+      - name: Upload output
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: v11-minimal-virtual-csrp-flagship
+          path: outputs/flagship/
+          if-no-files-found: warn
