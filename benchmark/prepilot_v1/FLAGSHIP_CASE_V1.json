@@ -1,0 +1,34 @@
+{
+  "case_id": "virtual_csrp_flagship_means_restriction_v1",
+  "status": "pre_pilot_flagship_case",
+  "service_channel": "Policy Intelligence",
+  "corpus_paper_ids": [
+    "CSRP-REAL-004",
+    "V03-MEANS-002",
+    "V03-MEANS-003",
+    "V03-MEANS-004"
+  ],
+  "query": "Given the short-term positive intervention evidence, the longer-term New Taipei findings, implementation limitations, and the regional observational context, should a suicide-prevention policymaker consider restricting retail access to barbecue charcoal? Provide a concise evidence memo covering supporting evidence, limiting evidence, implementation conditions, uncertainty, transferability, and remaining evidence gaps.",
+  "expected_units": [
+    "intervention_evaluation",
+    "policy_implementation",
+    "methods_evidence"
+  ],
+  "required_claim_ids": [
+    "CSRP-REAL-004-C01",
+    "CSRP-REAL-004-C03",
+    "V03-MEANS-002-C01",
+    "V03-MEANS-003-C01",
+    "V03-MEANS-003-C02",
+    "V03-MEANS-004-C01"
+  ],
+  "required_output_sections": [
+    "Evidence supporting consideration",
+    "Evidence limiting confidence",
+    "Implementation conditions",
+    "Uncertainty and transferability",
+    "Evidence gaps",
+    "Bottom-line policy interpretation"
+  ],
+  "boundary": "Population-level evidence synthesis only; no individual risk scoring or clinical recommendation."
+}
