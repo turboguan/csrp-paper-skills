@@ -13,7 +13,7 @@
     "minimal_virtual_csrp",
     "shared_knowledge_umbrella"
   ],
-  "query": "Given the short-term positive intervention evidence, the longer-term New Taipei findings, implementation limitations, and the regional observational context, should a suicide-prevention policymaker consider restricting retail access to barbecue charcoal? Provide a concise evidence memo covering supporting evidence, limiting evidence, implementation conditions, uncertainty, transferability, and remaining evidence gaps.",
+  "query": "Considering the Hong Kong charcoal retail-restriction trial, the 2015 New Taipei community intervention, the 2021 longer-term New Taipei controlled interrupted time-series follow-up, and the East/Southeast Asia regional charcoal-burning time-trend study, should a suicide-prevention policymaker consider restricting retail access to barbecue charcoal? Provide a concise evidence memo covering supporting evidence, limiting evidence, implementation conditions, uncertainty, transferability, and remaining evidence gaps.",
   "required_claim_ids": [
     "CSRP-REAL-004-C01",
     "CSRP-REAL-004-C03",
@@ -28,7 +28,13 @@
     "max_output_tokens_per_call": 1200,
     "max_llm_calls_per_architecture": 8,
     "temperature": 0,
-    "model": "same frozen OpenAI adapter/model for all architectures"
+    "model": "same frozen OpenAI adapter/model for all architectures",
+    "required_evidence_packet_ids": [
+      "CSRP-REAL-004",
+      "V03-MEANS-002",
+      "V03-MEANS-003",
+      "V03-MEANS-004"
+    ]
   },
   "evaluation": {
     "blinded": true,
