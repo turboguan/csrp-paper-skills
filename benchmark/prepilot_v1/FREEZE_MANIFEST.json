@@ -1,0 +1,41 @@
+{
+  "freeze_id": "virtual-csrp-prepilot-v1",
+  "freeze_date": "2026-10-21",
+  "source_branch": "research/v0.9-suicide-prevention-llm-demo",
+  "source_commit": "a736b38af323a0155344e20b1597a33801e381e5",
+  "scope": [
+    "Virtual CSRP institutional architecture",
+    "three organizational designs",
+    "Paper Skill / Evidence Graph substrate",
+    "matched LLM / retriever / evidence / token controls",
+    "Means Restriction pilot assets",
+    "five-paper suicide-prevention live LLM demo scaffold"
+  ],
+  "frozen_components": {
+    "organizational_designs": [
+      "functional_multi_agent",
+      "paper_agent_committee",
+      "shared_knowledge_umbrella"
+    ],
+    "institutional_units": [
+      "surveillance_epidemiology",
+      "intervention_evaluation",
+      "policy_implementation",
+      "practitioner_community",
+      "methods_evidence"
+    ],
+    "governance": [
+      "Evidence Judge",
+      "Safety Supervisor"
+    ],
+    "safety_boundary": "No autonomous individual suicide-risk scoring, diagnosis, triage or treatment selection."
+  },
+  "freeze_policy": [
+    "Do not modify core organizational semantics on this freeze branch.",
+    "Do not change matched evidence/model/token controls in-place after a real pilot begins.",
+    "Corrections require a new versioned branch and changelog.",
+    "Experimental prompts, questions and rubrics must be frozen before inspecting comparative outcomes.",
+    "No benchmark result may be described as scientific superiority without predefined evaluation and human review."
+  ],
+  "scientific_status": "pre-pilot architecture freeze; no comparative performance claim"
+}
