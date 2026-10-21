@@ -1,0 +1,94 @@
+{
+  "version": "v0.8-virtual-csrp",
+  "status": "institutional_architecture_scaffold",
+  "project_name": "Virtual CSRP",
+  "positioning": "An AI institute for suicide prevention research, policy, practice, and community support.",
+  "inspiration": {
+    "virtual_biotech": "Organize specialist AI agents like a research institution with a coordinating executive layer.",
+    "paper2agent": "Compile papers into callable tools/resources/prompts rather than treating each paper only as static text."
+  },
+  "evidence_foundation": [
+    "CSRP papers",
+    "reports, datasets, guidelines",
+    "validated Paper Skills",
+    "provenance registry",
+    "cross-paper Evidence Graph"
+  ],
+  "institutional_core": {
+    "director": "Director / PI Agent",
+    "coordinator": "Chief of Staff / Query Router",
+    "divisions": [
+      {
+        "id": "surveillance_epidemiology",
+        "name": "Surveillance & Epidemiology Unit",
+        "mission": "Trends, risk factors, population patterns and surveillance evidence."
+      },
+      {
+        "id": "intervention_evaluation",
+        "name": "Intervention & Evaluation Unit",
+        "mission": "Intervention evidence, programme evaluation and implementation science."
+      },
+      {
+        "id": "policy_implementation",
+        "name": "Policy & Implementation Unit",
+        "mission": "Policy analysis, evidence-to-action translation and resource-allocation reasoning."
+      },
+      {
+        "id": "practitioner_community",
+        "name": "Practitioner & Community Support Unit",
+        "mission": "Practice-facing evidence, community resources and human-centred implementation."
+      },
+      {
+        "id": "methods_evidence",
+        "name": "Methods & Evidence Unit",
+        "mission": "Study design, synthesis, causal inference, provenance and methodological quality."
+      }
+    ],
+    "cross_cutting_roles": [
+      "Evidence Judge",
+      "Safety Supervisor"
+    ]
+  },
+  "services": [
+    {
+      "id": "research",
+      "name": "Research Co-Scientist"
+    },
+    {
+      "id": "policy",
+      "name": "Policy Intelligence"
+    },
+    {
+      "id": "practice",
+      "name": "Practitioner Guidance"
+    },
+    {
+      "id": "community",
+      "name": "Community / Individual Support",
+      "boundary": "Bounded evidence information with human escalation; no autonomous risk scoring."
+    }
+  ],
+  "experimental_organizational_designs": [
+    {
+      "id": "functional_multi_agent",
+      "label": "Functional Virtual Institute",
+      "description": "Functionally differentiated agents coordinated by a facilitator in a shared evidence context."
+    },
+    {
+      "id": "paper_agent_committee",
+      "label": "Paper-Agent Committee",
+      "description": "Paper-level agents deliberate under a committee chair/orchestrator."
+    },
+    {
+      "id": "shared_knowledge_umbrella",
+      "label": "Shared-Knowledge Umbrella",
+      "description": "A small institutional reasoning layer uses shared Paper Skills and an Evidence Graph."
+    }
+  ],
+  "research_question": "How does organizational design shape collective reasoning, evidence integration and decision quality in AI co-scientists?",
+  "non_claims": [
+    "This scaffold does not establish that any architecture is superior.",
+    "This scaffold is not a clinical decision-support system.",
+    "Community-facing use requires bounded outputs, human oversight and additional validation."
+  ]
+}
