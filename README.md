@@ -29,6 +29,34 @@ Three organizational forms are implemented for matched comparison:
 
 The project does **not** assume that one architecture is universally superior. The intended management-science framing is an **Architecture × Task Characteristics** contingency test.
 
+## Current recommended architecture — Minimal Virtual CSRP
+
+The current operating design no longer tries to reproduce a human research-center org chart literally.
+
+Virtual CSRP now uses **four core agent capabilities**:
+
+```text
+Research Coordinator
+        ↓
+Evidence & Data
+        ↓
+Analysis & Methods      (activated only when needed)
+        ↓
+Synthesis & Decision
+        ↓
+Quality & Safety Gate   (not an agent)
+```
+
+All agents share institutional infrastructure: **Paper Skills, Evidence Graph, provenance registry, datasets, analysis artifacts and prior outputs**.
+
+For evidence-only tasks, only three agents need to be active: Coordinator → Evidence & Data → Synthesis & Decision. The Analysis & Methods Agent is activated only for tasks requiring statistical or computational work.
+
+This replaces the earlier Director / Chief of Staff / department-style hierarchy. The design principle is:
+
+> **Create an autonomous agent only when it performs a distinct information-processing function.**
+
+See [docs/V1.1_MINIMAL_VIRTUAL_CSRP.md](docs/V1.1_MINIMAL_VIRTUAL_CSRP.md).
+
 ## Architecture
 
 <p align="center">
