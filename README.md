@@ -9,17 +9,25 @@
   <img alt="Status" src="https://img.shields.io/badge/status-research%20prototype-lightgrey">
 </p>
 
-# CSRP Paper Skills
+# Virtual CSRP
 
-**A provenance-preserving paper-as-skill architecture for institutional scientific AI and cross-paper evidence synthesis.**
+**An institutional AI architecture for suicide prevention research, policy, practice and bounded community support.**
 
 > **Core principle:** papers provide evidence and capabilities; agents provide reasoning and coordination.
 
-This repository is a runnable research prototype for testing a specific scientific-AI architecture question:
+Virtual CSRP extends the repository from a paper-level architecture question to an **institution-level organizational design problem**. The evidence foundation still uses provenance-preserving Paper Skills and a shared Evidence Graph, while the institutional layer adds a Director / PI Agent, Chief of Staff / Query Router, five specialized divisions, an Evidence Judge, a Safety Supervisor and four service pathways.
 
-**Should each scientific paper become an autonomous agent, or should papers become shared, callable evidence skills used by a small number of persistent reasoning agents?**
+The central research question is:
 
-The current codebase contains the v0.2 end-to-end prototype plus the **v0.3 Evidence-Family Benchmark workstream**. v0.3 adds matched evidence families, claim-pair adjudication, benchmark queries and a runnable evaluation harness. It does **not** yet claim that Paper-as-Skill outperforms RAG, monolithic-agent, or one-paper-one-agent baselines.
+> **How does organizational design shape collective reasoning, evidence integration and decision quality in AI co-scientists?**
+
+Three organizational forms are implemented for matched comparison:
+
+1. **Functional Virtual Institute** — functionally differentiated agents coordinated in a shared evidence context.
+2. **Paper-Agent Committee** — paper-level expert agents deliberate under a chair/orchestrator.
+3. **Shared-Knowledge Umbrella** — a small institutional reasoning layer works over shared Paper Skills and an Evidence Graph.
+
+The project does **not** assume that one architecture is universally superior. The intended management-science framing is an **Architecture × Task Characteristics** contingency test.
 
 ## Architecture
 
@@ -144,6 +152,24 @@ This will create the first gold dataset capable of testing the central architect
 
 See [docs/V0.3_ROADMAP.md](docs/V0.3_ROADMAP.md).
 
+## v0.8 — Virtual CSRP institutional layer
+
+The repository now includes a complete institutional scaffold above the existing Paper Skill, Evidence Graph and A/B/C organization implementations.
+
+Virtual CSRP contains five institutional divisions:
+
+- Surveillance & Epidemiology;
+- Intervention & Evaluation;
+- Policy & Implementation;
+- Practitioner & Community Support;
+- Methods & Evidence.
+
+The cross-cutting governance layer contains an **Evidence Judge** and **Safety Supervisor**. The user-facing service layer contains **Research Co-Scientist**, **Policy Intelligence**, **Practitioner Guidance**, and bounded **Community / Individual Support**.
+
+See [docs/V0.8_VIRTUAL_CSRP.md](docs/V0.8_VIRTUAL_CSRP.md) and [benchmark/v0.8/virtual_csrp_manifest.json](benchmark/v0.8/virtual_csrp_manifest.json).
+
+The four-paper Means Restriction pilot remains the first matched experimental substrate and is not altered by the v0.8 institutional framing.
+
 ## Repository guide
 
 | File / directory | Purpose |
@@ -199,8 +225,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ## Project status
 
-**Research prototype — v0.3 development**
+**Research prototype — v0.8 Virtual CSRP scaffold**
 
-The repository is being developed alongside a scientific manuscript on shared Paper Skills, institutional evidence graphs, and sparse persistent agency.
+Current work combines institutional AI design, Paper Skills, evidence graphs and matched organizational experiments. The immediate scientific programme is to compare the three organizational forms under controlled evidence, model and token budgets, beginning with the four-paper Means Restriction pilot.
 
-**Tagline:** *Evidence is shared; agency is scarce.*
+**Tagline:** *From paper-level evidence to institutional intelligence.*
