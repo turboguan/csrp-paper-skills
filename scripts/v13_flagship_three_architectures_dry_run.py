@@ -46,6 +46,11 @@ def main() -> None:
     orchestrator = Orchestrator(registry, EvidenceGraph().build_graph(registry.all()))
     retriever = FixedEvidenceRetriever(registry, evidence_budget=4)
     packet = retriever.retrieve(config["query"])
+    required_packet = config["matched_controls"]["required_evidence_packet_ids"]
+    if set(packet.paper_ids) != set(required_packet):
+        raise AssertionError(
+            f"flagship retrieval incomplete: observed={packet.paper_ids}, required={required_packet}"
+        )
 
     adapter = DeterministicTestLLMAdapter()
     budget = MatchedBudget(
