@@ -31,6 +31,10 @@ The project does **not** assume that one architecture is universally superior. T
 
 ## Current recommended architecture — Minimal Virtual CSRP
 
+<p align="center">
+  <img src="docs/assets/minimal_virtual_csrp_architecture.svg" alt="Minimal Virtual CSRP architecture" width="100%"/>
+</p>
+
 The current operating design no longer tries to reproduce a human research-center org chart literally.
 
 Virtual CSRP now uses **four core agent capabilities**:
