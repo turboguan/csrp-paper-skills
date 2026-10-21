@@ -14,6 +14,7 @@ class PilotQuestion(BaseModel):
     complexity: Literal["low", "medium", "high", "adversarial"]
     task_interdependence: int
     task_uncertainty: int
+    evidence_heterogeneity: int | None = None
     task_type: str
     query: str
     expected_mode: Literal["evidence", "no_evidence"]
