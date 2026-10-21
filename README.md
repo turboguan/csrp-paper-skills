@@ -15,19 +15,64 @@
 
 > **Core principle:** papers provide evidence and capabilities; agents provide reasoning and coordination.
 
-Virtual CSRP extends the repository from a paper-level architecture question to an **institution-level organizational design problem**. The evidence foundation still uses provenance-preserving Paper Skills and a shared Evidence Graph, while the institutional layer adds a Director / PI Agent, Chief of Staff / Query Router, five specialized divisions, an Evidence Judge, a Safety Supervisor and four service pathways.
+Virtual CSRP extends the repository from a paper-level architecture question to an **institution-level organizational design problem**. The current AI-native design keeps the evidence foundation—Paper Skills, Evidence Graph, provenance, datasets and prior outputs—but avoids mirroring unnecessary human job titles. Autonomous agents are created only for distinct information-processing functions.
 
 The central research question is:
 
 > **How does organizational design shape collective reasoning, evidence integration and decision quality in AI co-scientists?**
 
-Three organizational forms are implemented for matched comparison:
+The **active three-architecture comparison** is now:
 
-1. **Functional Virtual Institute** — functionally differentiated agents coordinated in a shared evidence context.
-2. **Paper-Agent Committee** — paper-level expert agents deliberate under a chair/orchestrator.
-3. **Shared-Knowledge Umbrella** — a small institutional reasoning layer works over shared Paper Skills and an Evidence Graph.
+1. **Functional Virtual Institute** — high specialization: Perspective / Predict / Strategy / External / Decision roles coordinated over the same evidence.
+2. **Minimal Virtual CSRP** — moderate specialization: Coordinator → Evidence & Data → optional Analysis & Methods → Synthesis & Decision.
+3. **Shared-Knowledge Umbrella** — low specialization: one institutional reasoning context works directly over shared Paper Skills and the Evidence Graph.
+
+The former **Paper-Agent Committee** remains implemented as an archival/later-ablation baseline, but it is no longer Architecture 2 in the active pre-pilot comparison.
 
 The project does **not** assume that one architecture is universally superior. The intended management-science framing is an **Architecture × Task Characteristics** contingency test.
+
+## Current three-architecture experiment
+
+```text
+Architecture 1: Functional Virtual Institute
+HIGH specialization / horizontal role division
+Perspective + Predict + Strategy + External + Decision
+
+Architecture 2: Minimal Virtual CSRP
+MODERATE specialization / sequential research workflow
+Coordinator → Evidence & Data → [Analysis & Methods if needed] → Synthesis & Decision
+
+Architecture 3: Shared-Knowledge Umbrella
+LOW specialization / centralized shared-knowledge reasoning
+Institutional Agent ↔ Paper Skills + Evidence Graph
+```
+
+The experiment now asks:
+
+> **What level and form of organizational specialization is optimal for an AI research center, and how does that depend on the task?**
+
+See [docs/V1.2_THREE_ARCHITECTURES.md](docs/V1.2_THREE_ARCHITECTURES.md).
+
+## Immediate pre-pilot gate — three-architecture flagship
+
+Before the 36-cell mini-pilot, the active architectures are run once on the same suicide-prevention policy case using one identical retrieved EvidencePacket:
+
+```text
+Same question
+Same 4-paper Means Restriction evidence packet
+Same model
+Same evidence/token budget
+        ↓
+Architecture 1 — Functional Virtual Institute
+Architecture 2 — Minimal Virtual CSRP
+Architecture 3 — Shared-Knowledge Umbrella
+        ↓
+Blinded review + provenance / token / coordination inspection
+```
+
+The flagship is diagnostic rather than confirmatory. We proceed to the 36-cell mini-pilot only after verifying that all three architectures complete, preserve provenance, remain inside the evidence boundary, and produce meaningfully inspectable organizational differences.
+
+See [docs/V1.3_THREE_ARCHITECTURE_FLAGSHIP.md](docs/V1.3_THREE_ARCHITECTURE_FLAGSHIP.md).
 
 ## Current recommended architecture — Minimal Virtual CSRP
 

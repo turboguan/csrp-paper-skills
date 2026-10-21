@@ -1,0 +1,152 @@
+{
+  "mini_pilot_id": "virtual_csrp_36cell_mini_pilot_v2",
+  "status": "pre_pilot_question_set_revised_architecture_2",
+  "corpus_paper_ids": [
+    "CSRP-REAL-004",
+    "V03-MEANS-002",
+    "V03-MEANS-003",
+    "V03-MEANS-004"
+  ],
+  "architectures": [
+    "functional_multi_agent",
+    "minimal_virtual_csrp",
+    "shared_knowledge_umbrella"
+  ],
+  "replicates_per_architecture_query": 2,
+  "expected_cells": 36,
+  "design_note": "6 questions × 3 architectures × 2 replicates = 36 cells. Architecture 2 is Minimal Virtual CSRP. Diagnostic/mechanism-seeking pilot, not confirmatory inference.",
+  "matched_controls": {
+    "retrieval": "one FixedEvidenceRetriever call per query; identical EvidencePacket for all architectures",
+    "evidence_budget_papers": 4,
+    "max_total_tokens_per_cell": 16000,
+    "max_output_tokens_per_call": 700,
+    "max_llm_calls_per_cell": 8,
+    "temperature": 0,
+    "model": "use the same frozen real LLM adapter/model for all architectures"
+  },
+  "questions": [
+    {
+      "query_id": "MINI-L01",
+      "complexity": "low",
+      "task_interdependence": 1,
+      "task_uncertainty": 1,
+      "evidence_heterogeneity": 1,
+      "task_type": "single_paper_factual",
+      "query": "In the Hong Kong charcoal-restriction study, what happened to the charcoal-burning suicide rate in Tuen Mun during the 12-month intervention?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01"
+      ],
+      "human_review_required": false
+    },
+    {
+      "query_id": "MINI-M01",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 3,
+      "evidence_heterogeneity": 2,
+      "task_type": "short_vs_long_followup",
+      "query": "Compare the 2015 short-term and 2021 long-term New Taipei findings on the charcoal-restriction programme. Explain whether differences in timeframe and implementation affect how the evidence should be interpreted.",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-002",
+        "V03-MEANS-003"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-003-C02"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "MINI-M02",
+      "complexity": "medium",
+      "task_interdependence": 2,
+      "task_uncertainty": 2,
+      "evidence_heterogeneity": 3,
+      "task_type": "evidence_type_boundary",
+      "query": "How should the regional East and Southeast Asia time-trend evidence be distinguished from direct intervention evidence from Hong Kong and New Taipei when evaluating charcoal-access restriction?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "V03-MEANS-004",
+        "CSRP-REAL-004",
+        "V03-MEANS-002"
+      ],
+      "required_claim_ids": [
+        "V03-MEANS-004-C01",
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "MINI-H01",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "evidence_heterogeneity": 3,
+      "task_type": "multi_paper_synthesis",
+      "query": "What evidence supports or limits the effectiveness of restricting retail access to barbecue charcoal as a population suicide-prevention strategy?",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003",
+        "V03-MEANS-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-004-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "MINI-H02",
+      "complexity": "high",
+      "task_interdependence": 3,
+      "task_uncertainty": 3,
+      "evidence_heterogeneity": 3,
+      "task_type": "decision_memo",
+      "query": "Prepare a concise evidence memo for a policymaker considering retail charcoal-access restriction, including supporting evidence, limiting evidence, uncertainty, implementation conditions and transferability.",
+      "expected_mode": "evidence",
+      "required_paper_ids": [
+        "CSRP-REAL-004",
+        "V03-MEANS-002",
+        "V03-MEANS-003",
+        "V03-MEANS-004"
+      ],
+      "required_claim_ids": [
+        "CSRP-REAL-004-C01",
+        "V03-MEANS-002-C01",
+        "V03-MEANS-003-C01",
+        "V03-MEANS-003-C02",
+        "V03-MEANS-004-C01"
+      ],
+      "human_review_required": true
+    },
+    {
+      "query_id": "MINI-A01",
+      "complexity": "adversarial",
+      "task_interdependence": 0,
+      "task_uncertainty": 2,
+      "evidence_heterogeneity": 1,
+      "task_type": "unsupported_outcome_hard_negative",
+      "query": "Do these charcoal-restriction studies show that the intervention improves depression symptoms?",
+      "expected_mode": "no_evidence",
+      "required_paper_ids": [],
+      "required_claim_ids": [],
+      "human_review_required": false
+    }
+  ],
+  "architecture_change": {
+    "previous_architecture_2": "paper_agent_committee",
+    "new_architecture_2": "minimal_virtual_csrp",
+    "reason": "Use an AI-native minimal research-center workflow rather than one-paper-one-agent committee as the primary second architecture."
+  }
+}
