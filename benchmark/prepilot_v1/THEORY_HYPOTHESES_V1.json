@@ -1,0 +1,82 @@
+{
+  "theory_version": "virtual-csrp-org-theory-v1",
+  "status": "pre-pilot hypotheses_frozen_before_comparative_outcomes",
+  "research_question": "How does organizational design shape collective reasoning, evidence integration, and decision quality in AI co-scientists for suicide-prevention evidence synthesis?",
+  "primary_theory": "Organizational Information Processing Theory",
+  "complementary_theories": [
+    "Contingency Theory",
+    "Transactive Memory Systems",
+    "Knowledge-Based View"
+  ],
+  "independent_variable": {
+    "name": "organizational_architecture",
+    "levels": [
+      "functional_multi_agent",
+      "paper_agent_committee",
+      "shared_knowledge_umbrella"
+    ]
+  },
+  "moderators": [
+    "task_interdependence",
+    "task_uncertainty",
+    "evidence_heterogeneity",
+    "evidence_load"
+  ],
+  "dependent_variables": [
+    "evidence_correctness",
+    "cross_paper_synthesis",
+    "uncertainty_handling",
+    "decision_quality",
+    "provenance_quality",
+    "unsupported_claim_rate",
+    "coordination_messages",
+    "llm_calls",
+    "token_cost",
+    "latency"
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "The effect of AI organizational architecture on reasoning performance will depend on task information-processing demands; no architecture is expected to dominate across all task types.",
+      "theory_link": [
+        "Organizational Information Processing Theory",
+        "Contingency Theory"
+      ]
+    },
+    {
+      "id": "H2",
+      "statement": "On decomposable tasks with low cross-paper interdependence, the Functional Virtual Institute will achieve comparable or higher decision quality with lower coordination burden than the Paper-Agent Committee.",
+      "theory_link": [
+        "Organizational Information Processing Theory",
+        "functional differentiation"
+      ]
+    },
+    {
+      "id": "H3",
+      "statement": "When evidence is heterogeneous or potentially conflicting, the Paper-Agent Committee will surface a broader range of paper-specific viewpoints and disagreements than the Functional Virtual Institute, but its coordination cost will increase more rapidly with evidence load.",
+      "theory_link": [
+        "Transactive Memory Systems",
+        "group decision making",
+        "coordination cost"
+      ]
+    },
+    {
+      "id": "H4",
+      "statement": "On highly interdependent cross-paper synthesis tasks, the Shared-Knowledge Umbrella will preserve cross-paper evidence links and provenance with lower coordination burden than the Paper-Agent Committee.",
+      "theory_link": [
+        "Knowledge-Based View",
+        "shared organizational memory",
+        "Organizational Information Processing Theory"
+      ]
+    },
+    {
+      "id": "H5",
+      "statement": "The performance advantage of a given architecture will be strongest when its coordination structure matches the task's interdependence and uncertainty, producing an architecture-by-task-characteristics interaction in decision quality and evidence integration.",
+      "theory_link": [
+        "Contingency Theory",
+        "Organizational Information Processing Theory"
+      ]
+    }
+  ],
+  "interpretation_rule": "These are directional pre-pilot hypotheses, not conclusions. Null, reversed, or mixed findings are scientifically informative."
+}

@@ -1,0 +1,65 @@
+name: v1.0 paid pre-pilot execution
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Choose the live run"
+        required: true
+        type: choice
+        default: flagship
+        options:
+          - flagship
+          - mini_pilot_36cell
+      confirm_paid_run:
+        description: "I understand this workflow makes paid external LLM calls"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  live-prepilot:
+    if: ${{ inputs.confirm_paid_run }}
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      CSRP_REAL_LLM_CONFIRM: "1"
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && python -m pip install -e '.[dev,openai]'
+
+      - name: Run tests before paid calls
+        run: pytest -q
+
+      - name: Verify credential/model access
+        run: python scripts/v07_openai_smoke.py
+
+      - name: Run flagship case
+        if: ${{ inputs.mode == 'flagship' }}
+        run: python scripts/v10_flagship_case_real.py
+
+      - name: Run 36-cell mini-pilot
+        if: ${{ inputs.mode == 'mini_pilot_36cell' }}
+        run: python scripts/v10_mini_pilot_real.py
+
+      - name: Upload outputs
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: v10-paid-prepilot-output
+          path: |
+            outputs/flagship/
+            outputs/mini_pilot/
+          if-no-files-found: warn
