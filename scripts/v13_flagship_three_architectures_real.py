@@ -50,6 +50,11 @@ def main() -> None:
     registry = build_registry(root)
     orchestrator = Orchestrator(registry, EvidenceGraph().build_graph(registry.all()))
     packet = FixedEvidenceRetriever(registry, evidence_budget=4).retrieve(config["query"])
+    required_packet = config["matched_controls"]["required_evidence_packet_ids"]
+    if set(packet.paper_ids) != set(required_packet):
+        raise AssertionError(
+            f"flagship retrieval incomplete: observed={packet.paper_ids}, required={required_packet}"
+        )
 
     budget = MatchedBudget(
         max_evidence_papers=4,
