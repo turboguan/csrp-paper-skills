@@ -1,0 +1,63 @@
+{
+  "theory_version": "virtual-csrp-org-theory-v2",
+  "status": "pre_pilot_hypotheses_revised_after_architecture_set_change",
+  "change_note": "Architecture 2 changed from Paper-Agent Committee to Minimal Virtual CSRP by explicit design decision before live comparative execution.",
+  "research_question": "How do different forms and degrees of organizational specialization affect collective reasoning quality, evidence integration, and coordination cost in AI co-scientists for suicide-prevention research?",
+  "primary_theory": "Organizational Information Processing Theory",
+  "complementary_theories": [
+    "Contingency Theory",
+    "Knowledge-Based View",
+    "Coordination Theory"
+  ],
+  "architectures": [
+    "functional_multi_agent",
+    "minimal_virtual_csrp",
+    "shared_knowledge_umbrella"
+  ],
+  "conceptual_axis": [
+    {
+      "architecture": "functional_multi_agent",
+      "specialization": "high",
+      "coordination_pattern": "horizontal functional division with facilitator",
+      "expected_strength": "breadth of perspectives and explicit role differentiation",
+      "expected_cost": "highest coordination/message burden"
+    },
+    {
+      "architecture": "minimal_virtual_csrp",
+      "specialization": "moderate",
+      "coordination_pattern": "sequential research workflow with dynamic agent activation",
+      "expected_strength": "balanced specialization and coordination efficiency",
+      "expected_cost": "moderate coordination burden"
+    },
+    {
+      "architecture": "shared_knowledge_umbrella",
+      "specialization": "low",
+      "coordination_pattern": "centralized shared-knowledge reasoning",
+      "expected_strength": "lowest coordination cost and direct cross-paper integration",
+      "expected_cost": "risk of insufficient functional decomposition on complex tasks"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "statement": "The effect of organizational architecture on reasoning performance will depend on task information-processing demands; no architecture is expected to dominate across all task types."
+    },
+    {
+      "id": "H2",
+      "statement": "The Functional Virtual Institute will provide the broadest explicitly differentiated analysis on complex tasks, but will incur the highest coordination burden."
+    },
+    {
+      "id": "H3",
+      "statement": "Minimal Virtual CSRP will achieve a better quality–coordination trade-off than the Functional Virtual Institute on evidence-synthesis tasks by preserving distinct research functions while avoiding unnecessary agents."
+    },
+    {
+      "id": "H4",
+      "statement": "The Shared-Knowledge Umbrella will achieve the lowest coordination cost and perform competitively on tightly integrated cross-paper synthesis, but may underperform more specialized architectures when tasks require explicit decomposition into distinct research functions."
+    },
+    {
+      "id": "H5",
+      "statement": "Architecture performance will follow an architecture-by-task-characteristics interaction: the optimal level of specialization will increase with task complexity, uncertainty, and need for distinct analytical functions."
+    }
+  ],
+  "interpretation_rule": "These are directional pre-pilot hypotheses, not conclusions. Null, reversed, or mixed findings remain informative."
+}
