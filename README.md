@@ -53,6 +53,27 @@ The experiment now asks:
 
 See [docs/V1.2_THREE_ARCHITECTURES.md](docs/V1.2_THREE_ARCHITECTURES.md).
 
+## Immediate pre-pilot gate — three-architecture flagship
+
+Before the 36-cell mini-pilot, the active architectures are run once on the same suicide-prevention policy case using one identical retrieved EvidencePacket:
+
+```text
+Same question
+Same 4-paper Means Restriction evidence packet
+Same model
+Same evidence/token budget
+        ↓
+Architecture 1 — Functional Virtual Institute
+Architecture 2 — Minimal Virtual CSRP
+Architecture 3 — Shared-Knowledge Umbrella
+        ↓
+Blinded review + provenance / token / coordination inspection
+```
+
+The flagship is diagnostic rather than confirmatory. We proceed to the 36-cell mini-pilot only after verifying that all three architectures complete, preserve provenance, remain inside the evidence boundary, and produce meaningfully inspectable organizational differences.
+
+See [docs/V1.3_THREE_ARCHITECTURE_FLAGSHIP.md](docs/V1.3_THREE_ARCHITECTURE_FLAGSHIP.md).
+
 ## Current recommended architecture — Minimal Virtual CSRP
 
 <p align="center">

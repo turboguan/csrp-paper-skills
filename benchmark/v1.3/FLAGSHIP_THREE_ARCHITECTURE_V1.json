@@ -1,0 +1,52 @@
+{
+  "flagship_id": "virtual_csrp_three_architecture_flagship_v1",
+  "status": "pre_live_flagship_comparison",
+  "scientific_focus": "suicide_prevention_policy_evidence_synthesis",
+  "corpus_paper_ids": [
+    "CSRP-REAL-004",
+    "V03-MEANS-002",
+    "V03-MEANS-003",
+    "V03-MEANS-004"
+  ],
+  "architectures": [
+    "functional_multi_agent",
+    "minimal_virtual_csrp",
+    "shared_knowledge_umbrella"
+  ],
+  "query": "Considering the Hong Kong charcoal retail-restriction trial, the 2015 New Taipei community intervention, the 2021 longer-term New Taipei controlled interrupted time-series follow-up, and the East/Southeast Asia regional charcoal-burning time-trend study, should a suicide-prevention policymaker consider restricting retail access to barbecue charcoal? Provide a concise evidence memo covering supporting evidence, limiting evidence, implementation conditions, uncertainty, transferability, and remaining evidence gaps.",
+  "required_claim_ids": [
+    "CSRP-REAL-004-C01",
+    "CSRP-REAL-004-C03",
+    "V03-MEANS-002-C01",
+    "V03-MEANS-003-C01",
+    "V03-MEANS-003-C02",
+    "V03-MEANS-004-C01"
+  ],
+  "matched_controls": {
+    "evidence_budget_papers": 4,
+    "max_total_tokens_per_architecture": 16000,
+    "max_output_tokens_per_call": 1200,
+    "max_llm_calls_per_architecture": 8,
+    "temperature": 0,
+    "model": "same frozen OpenAI adapter/model for all architectures",
+    "required_evidence_packet_ids": [
+      "CSRP-REAL-004",
+      "V03-MEANS-002",
+      "V03-MEANS-003",
+      "V03-MEANS-004"
+    ]
+  },
+  "evaluation": {
+    "blinded": true,
+    "dimensions": [
+      "evidence_correctness_1_5",
+      "cross_paper_synthesis_1_5",
+      "uncertainty_handling_1_5",
+      "policy_usefulness_1_5",
+      "provenance_quality_1_5",
+      "unsupported_claim_yes_no"
+    ],
+    "interpretation": "Flagship comparison is diagnostic only and precedes the 36-cell mini-pilot."
+  },
+  "safety_boundary": "Population-level suicide-prevention policy evidence synthesis only; no individual risk scoring, diagnosis, triage or treatment selection."
+}
